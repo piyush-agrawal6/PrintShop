@@ -10,7 +10,6 @@ import { BsTruck } from "react-icons/bs";
 import { Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.jpg";
-import print from "./print.png";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -117,110 +116,168 @@ const Navbar = () => {
                 <div className="subMenu megaMenu menuColumn">
                   <div className="menuList">
                     <ul>
-                      <p>Men</p>
+                      <p>Clothing</p>
                       <li>
-                        <Link>T-Shirts</Link>
+                        <Link>T-shirts</Link>
+                      </li>
+                      <li>
+                        <Link>Polo T-shirts</Link>
+                      </li>
+                      <li>
+                        <Link>Bags</Link>
+                      </li>
+                      <li>
+                        <Link>Cap</Link>
                       </li>
                       <li>
                         <Link>Jackets</Link>
                       </li>
                       <li>
-                        <Link>Sweaters</Link>
+                        <Link>Sweatshirt</Link>
                       </li>
                       <li>
-                        <Link>Sweatshirts</Link>
-                      </li>
-                      <li>
-                        <Link>Flip Flops</Link>
-                      </li>
-                      <li>
-                        <Link>Boxers</Link>
-                      </li>
-                      <li>
-                        <Link>Jeans</Link>
+                        <Link>Apron</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Women</p>
+                      <p>Stationary</p>
                       <li>
-                        <Link>Kurtas & Suits</Link>
+                        <Link>Envelopes</Link>
                       </li>
                       <li>
-                        <Link>Sarees</Link>
+                        <Link>Calender</Link>
                       </li>
                       <li>
-                        <Link>Palazzos</Link>
+                        <Link>Notebooks</Link>
                       </li>
                       <li>
-                        <Link>Jackets</Link>
+                        <Link>Stamps</Link>
                       </li>
                       <li>
-                        <Link>Jeans</Link>
+                        <Link>Booklets</Link>
                       </li>
                       <li>
-                        <Link>Jumpsuits</Link>
+                        <Link>Notepad</Link>
                       </li>
                       <li>
-                        <Link>Shrugs</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="menuList">
-                    <ul>
-                      <p>Kids</p>
-                      <li>
-                        <Link>T-Shirts</Link>
+                        <Link>Dairy</Link>
                       </li>
                       <li>
-                        <Link>Shorts</Link>
-                      </li>
-                      <li>
-                        <Link>Thermals</Link>
-                      </li>
-                      <li>
-                        <Link>Nightwear</Link>
-                      </li>
-                      <li>
-                        <Link>Party Wear</Link>
-                      </li>
-                      <li>
-                        <Link>Trousers</Link>
-                      </li>
-                      <li>
-                        <Link>Jeans</Link>
+                        <Link>Letter Pads</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Beauty</p>
+                      <p>Personalized Gifts</p>
                       <li>
-                        <Link>Makeup</Link>
+                        <Link>Photo Frames </Link>
                       </li>
                       <li>
-                        <Link>Lipstick</Link>
+                        <Link>Mugs</Link>
                       </li>
                       <li>
-                        <Link>Mascara</Link>
+                        <Link>Pens</Link>
                       </li>
                       <li>
-                        <Link>Foundation</Link>
+                        <Link>Albums</Link>
                       </li>
                       <li>
-                        <Link>Nail Polish</Link>
+                        <Link>Canvas</Link>
                       </li>
                       <li>
-                        <Link>Eyeshadow</Link>
+                        <Link>Gift Hampers</Link>
                       </li>
                       <li>
-                        <Link>Hair Oil</Link>
+                        <Link>Drinkware</Link>
+                      </li>
+                      <li>
+                        <Link>Mouse Pads</Link>
+                      </li>
+                      <li>
+                        <Link>Mobile covers</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
-                    <img width="130px" src={print} alt="" />
+                    <ul>
+                      <p>Marketing</p>
+                      <li>
+                        <Link>Banners</Link>
+                      </li>
+                      <li>
+                        <Link>Posters</Link>
+                      </li>
+                      <li>
+                        <Link>Signs</Link>
+                      </li>
+                      <li>
+                        <Link>Flyers</Link>
+                      </li>
+                      <li>
+                        <Link>Packaging boxes</Link>
+                      </li>
+                      <li>
+                        <Link>IDs and Lanyards</Link>
+                      </li>
+                      <li>
+                        <Link>Brochures</Link>
+                      </li>
+                      <li>
+                        <Link>Leaflets</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="menuList">
+                    <ul>
+                      <p>Printouts</p>
+                      <li>
+                        <Link>Visiting cards</Link>
+                      </li>
+                      <li>
+                        <Link>Rate cards</Link>
+                      </li>
+                      <li>
+                        <Link>Menu Cards</Link>
+                      </li>
+                      <li>
+                        <Link>Bill books</Link>
+                      </li>
+                      <li>
+                        <Link>Invitations</Link>
+                      </li>
+                      <li>
+                        <Link>Bookmarks</Link>
+                      </li>
+                      <li>
+                        <Link>Paper Bags</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="menuList">
+                    <ul>
+                      <p>Labels & stickers</p>
+                      <li>
+                        <Link>Labels</Link>
+                      </li>
+                      <li>
+                        <Link>Stickers</Link>
+                      </li>
+                      <li>
+                        <Link>Laptop skins</Link>
+                      </li>
+                      <li>
+                        <Link>Mobile skins</Link>
+                      </li>
+                      <li>
+                        <Link>Tags</Link>
+                      </li>
+                      <li>
+                        <Link>Tapes</Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
