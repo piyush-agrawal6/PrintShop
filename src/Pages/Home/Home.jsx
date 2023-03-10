@@ -12,7 +12,7 @@ const Home = () => {
       <div className="HomeCarousel">
         <Carousel infiniteLoop autoPlay>
           <div className="image">
-            <img src="./assets/slider/slider.webp" alt="images" />
+            <img src="./assets/slider/slider.jpg" alt="images" />
           </div>
           <div className="image">
             <img src="./assets/slider/slider2.jpg" alt="images" />
