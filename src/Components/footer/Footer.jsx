@@ -10,7 +10,6 @@ import { HiCursorClick } from "react-icons/hi";
 const Footer = () => {
   return (
     <>
-      {/* <div className="footerHeader"></div> */}
       <div className="footer">
         <div className="footerContainer">
           <div className="footerList">

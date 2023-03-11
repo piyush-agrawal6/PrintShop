@@ -14,21 +14,6 @@ const Home = () => {
           <div className="image">
             <img src="./assets/slider/slider.jpg" alt="images" />
           </div>
-          <div className="image">
-            <img src="./assets/slider/slider2.jpg" alt="images" />
-          </div>
-          <div className="image">
-            <img src="./assets/slider/slider3.jpg" alt="images" />
-          </div>
-          <div className="image">
-            <img src="./assets/slider/slider4.webp" alt="images" />
-          </div>
-          <div className="image">
-            <img src="./assets/slider/slider5.webp" alt="images" />
-          </div>
-          <div className="image">
-            <img src="./assets/slider/slider6.webp" alt="images" />
-          </div>
         </Carousel>
       </div>
       <div className="homeNav">
@@ -58,7 +43,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <p className="homeHeader">CATEGORIES WE OFFER</p>
+      {/* <p className="homeHeader">CATEGORIES WE OFFER</p>
       <div className="homeCategories">
         <div>
           <img src="./assets/category/Shirts.webp" alt="" />
@@ -90,8 +75,8 @@ const Home = () => {
         <div>
           <img src="./assets/category/Innerwear.webp" alt="" />
         </div>
-      </div>
-      <p className="homeHeader">COLORS OF THE SEASON</p>
+      </div> */}
+      <p className="homeHeader">CATEGORIES WE OFFER</p>
       <div className="homeColors">
         <div>
           <Link>
@@ -143,7 +128,6 @@ const Home = () => {
             <img src="./assets/colors/10.jpg" alt="" />
           </Link>
         </div>
-        
       </div>
     </div>
   );

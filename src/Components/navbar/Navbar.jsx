@@ -108,11 +108,8 @@ const Navbar = () => {
                 <MdClose className="cross" onClick={() => handleClick()} />
               </p>
 
-              <li
-                className="menuItem"
-                onClick={() => handleClick("all", "all")}
-              >
-                <Link to={`/product`}>All Products</Link>
+              <li className="menuItem">
+                <Link>All Products</Link>
                 <div className="subMenu megaMenu menuColumn">
                   <div className="menuList">
                     <ul>
@@ -281,17 +278,11 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
-              <li
-                className="menuItem"
-                onClick={() => handleClick("gender", "men")}
-              >
-                <Link to={`/product?gender=men`}>About</Link>
+              <li className="menuItem">
+                <Link>About</Link>
               </li>
-              <li
-                className="menuItem"
-                onClick={() => handleClick("gender", "women")}
-              >
-                <Link to={`/product?gender=women`}>Blogs</Link>
+              <li className="menuItem">
+                <Link>Blogs</Link>
               </li>
 
               <p className="mobItem" onClick={handleClick}>

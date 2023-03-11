@@ -109,6 +109,7 @@
   .homeCategories {
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: 1.6rem;
+    gap: 1rem;
   }
   .homeColors {
     grid-template-columns: repeat(2, 1fr);
