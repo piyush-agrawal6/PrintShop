@@ -62,7 +62,6 @@ const Home = () => {
       <div className="homeCategories">
         <div>
           <img src="./assets/category/Shirts.webp" alt="" />
-          <p>Visiting cards</p>
         </div>
         <div>
           <img src="./assets/category/Trousers.webp" alt="" />
@@ -91,50 +90,60 @@ const Home = () => {
         <div>
           <img src="./assets/category/Innerwear.webp" alt="" />
         </div>
-      
       </div>
       <p className="homeHeader">COLORS OF THE SEASON</p>
       <div className="homeColors">
         <div>
           <Link>
-            <img src="./assets/colors/Lime.webp" alt="" />
+            <img src="./assets/colors/1.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/White.webp" alt="" />
+            <img src="./assets/colors/2.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/Hues.webp" alt="" />
+            <img src="./assets/colors/3.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/Cobalt.webp" alt="" />
+            <img src="./assets/colors/4.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/Browns.webp" alt="" />
+            <img src="./assets/colors/5.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/Pastels.webp" alt="" />
+            <img src="./assets/colors/6.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/Blue.webp" alt="" />
+            <img src="./assets/colors/7.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/Olive.webp" alt="" />
+            <img src="./assets/colors/8.jpg" alt="" />
           </Link>
         </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/9.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/10.jpg" alt="" />
+          </Link>
+        </div>
+        
       </div>
     </div>
   );
