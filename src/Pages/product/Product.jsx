@@ -49,30 +49,95 @@ const Product = () => {
     <div className="productCon">
       <div className="proContainer">
         <p className="proNavigation">
-          <span>Home /</span> {query}
+          <span>Home /</span> {query ? query : "Products"}
         </p>
         <p className="proCount">
           Products - <span>{data?.productLength} items</span>
         </p>
-        <div className="proSort">
-          <div>
-            <Select
-              size="large"
-              placeholder="Sort By"
-              style={{
-                width: 200,
-                border: "1px solid gray",
-                color: "black",
-                borderRadius: "8px",
-                outline: "none",
-              }}
-              options={sortOptions}
-            />
-          </div>
-        </div>
       </div>
       <div className="proBox">
-        <div className="proFilters"></div>
+        <div className="proFilters">
+          <div className="proSort">
+            <div>
+              <Select
+                size="large"
+                placeholder="Sort By"
+                style={{
+                  width: "100%",
+                  border: "1px solid gray",
+                  color: "black",
+                  borderRadius: "8px",
+                  outline: "none",
+                }}
+                options={sortOptions}
+              />
+            </div>
+          </div>
+          <div className="proSort">
+            <div>
+              <Select
+                size="large"
+                placeholder="Sort By"
+                style={{
+                  width: "100%",
+                  border: "1px solid gray",
+                  color: "black",
+                  borderRadius: "8px",
+                  outline: "none",
+                }}
+                options={sortOptions}
+              />
+            </div>
+          </div>
+          <div className="proSort">
+            <div>
+              <Select
+                size="large"
+                placeholder="Sort By"
+                style={{
+                  width: "100%",
+                  border: "1px solid gray",
+                  color: "black",
+                  borderRadius: "8px",
+                  outline: "none",
+                }}
+                options={sortOptions}
+              />
+            </div>
+          </div>
+          <div className="proSort">
+            <div>
+              <Select
+                size="large"
+                placeholder="Sort By"
+                style={{
+                  width: "100%",
+                  border: "1px solid gray",
+                  color: "black",
+                  borderRadius: "8px",
+                  outline: "none",
+                }}
+                options={sortOptions}
+              />
+            </div>
+          </div>
+          <div className="proSort">
+            <div>
+              <Select
+                size="large"
+                placeholder="Sort By"
+                style={{
+                  width: "100%",
+                  border: "1px solid gray",
+                  color: "black",
+                  borderRadius: "8px",
+                  outline: "none",
+                }}
+                options={sortOptions}
+              />
+            </div>
+          </div>
+        </div>
         {pro_loading ? (
           <div className="proGrid">
             <div className="proSkeleton">

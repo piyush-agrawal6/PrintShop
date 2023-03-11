@@ -50,39 +50,112 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      {/* <p className="homeHeader">CATEGORIES WE OFFER</p>
-      <div className="homeCategories">
+      <p className="homeHeader">TOP SELLERS</p>
+      <div className="homeColors">
         <div>
-          <img src="./assets/category/Shirts.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/1.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Trousers.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/2.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/T-Shirts.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/3.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Tops.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/4.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Teens-Wear.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/5.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Sets.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/6.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Sarees.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/7.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Kurtas.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/8.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Jeans.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/9.jpg" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="./assets/category/Innerwear.webp" alt="" />
+          <Link>
+            <img src="./assets/colors/10.jpg" alt="" />
+          </Link>
         </div>
-      </div> */}
+      </div>
+      <p className="homeHeader">TRENDING PRODUCTS</p>
+      <div className="homeColors">
+        <div>
+          <Link>
+            <img src="./assets/colors/1.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/2.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/3.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/4.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/5.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/6.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/7.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/8.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/9.jpg" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <img src="./assets/colors/10.jpg" alt="" />
+          </Link>
+        </div>
+      </div>
       <p className="homeHeader">CATEGORIES WE OFFER</p>
       <div className="homeColors">
         <div>
