@@ -12,6 +12,9 @@ const Home = () => {
       <div className="HomeCarousel">
         <Carousel infiniteLoop autoPlay>
           <div className="image">
+            <img src="./assets/slider/1.gif" alt="images" />
+          </div>
+          <div className="image">
             <img src="./assets/slider/slider.jpg" alt="images" />
           </div>
         </Carousel>
