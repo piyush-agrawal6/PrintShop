@@ -49,7 +49,7 @@ const Product = () => {
     <div className="productCon">
       <div className="proContainer">
         <p className="proNavigation">
-          <span>Home /</span> Men
+          <span>Home /</span> {query}
         </p>
         <p className="proCount">
           Products - <span>{data?.productLength} items</span>
