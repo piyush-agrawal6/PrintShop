@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Signup.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../Redux/auth/action";
+import { FcGoogle } from "react-icons/fc";
+import jwt_decode from "jwt-decode";
 import { message } from "antd";
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +37,7 @@ const Signup = () => {
           duration: 3,
         });
       } else {
-        dispatch(registerUser(formData));
+        // dispatch(registerUser(formData));
       }
     } else {
       messageApi.open({
@@ -53,6 +55,31 @@ const Signup = () => {
     });
     // return <Navigate to="/" />;
   }
+
+  function handleCallbackResponse(res) {
+    console.log("Google Id", res.credential);
+    let value = jwt_decode(res.credential);
+    console.log(value);
+    document.getElementById("SigninDiv").hidden = true;
+  }
+
+  useEffect(() => {
+    window.google.accounts.id.initialize({
+      client_id:
+        "577292365515-han2ihachrs8u89s6r0ev7i8iutu7f99.apps.googleusercontent.com",
+      callback: handleCallbackResponse,
+    });
+
+    window.google.accounts.id.renderButton(
+      document.getElementById("SigninDiv"),
+      {
+        theme: "outline",
+        size: "large",
+      }
+    );
+    window.google.accounts.id.prompt();
+  }, []);
+
   return (
     <div className="signup">
       <div className="signupContainer">
@@ -94,6 +121,11 @@ const Signup = () => {
                 {auth.userRegister.loading ? "Loading" : "CONTINUE"}
               </button>
             </form>
+            {/* <button className="googlesignup" id="SigninDiv">
+              SIGNUP WITH GOOGLE
+              <FcGoogle style={{ fontsize: "1.8rem" }} />
+            </button> */}
+            <div id="SigninDiv" className="googlesignup"></div>
           </div>
         </div>
       </div>

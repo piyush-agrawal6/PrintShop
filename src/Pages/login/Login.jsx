@@ -20,7 +20,7 @@ const Login = () => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(formData, "FORMDATA");
     dispatch(authLogin(formData));
   };
   return (

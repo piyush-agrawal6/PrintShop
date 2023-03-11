@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #fdeeeb;
+  background-color: rgba(110, 192, 212, 0.683);
 }
 .signupContainer {
   width: 900px;
@@ -11,6 +11,7 @@
   padding: 2rem 0;
   display: flex;
   background-color: rgb(255, 255, 255);
+  border-radius: 5px;
 }
 .signupImage {
   width: 43%;
@@ -43,15 +44,16 @@ span {
 }
 .signupDetail > div:nth-child(2) button {
   width: 100%;
-  padding: 10px;
-  margin: 1rem 0;
+  height: 2.4rem;
+  margin: 10px 0;
   font-size: 15px;
   letter-spacing: 1px;
-  background-color: #fd436e;
+  background-color: rgb(37 192 229);
   border: none;
   color: white;
   cursor: pointer;
   font-weight: 700;
+  border-radius: 7px;
 }
 .signupDetail > div:nth-child(2) p {
   color: gray;
@@ -62,6 +64,13 @@ span {
   color: #fd436e;
   font-weight: 500;
   cursor: pointer;
+}
+.googlesignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 @media (max-width: 1000px) {
   .signupContainer {
