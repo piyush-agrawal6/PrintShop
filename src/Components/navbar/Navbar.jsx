@@ -10,6 +10,7 @@ import { BsTruck } from "react-icons/bs";
 import { Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.jpg";
+
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -55,17 +56,17 @@ const Navbar = () => {
           Logout
         </p>
       ) : (
-        <p padding="10px">Login with Google</p>
+        <Link to="/login">
+          <p>login</p>
+        </Link>
       ),
       key: "0",
     },
     {
-      label: auth.data.isAuthenticated ? (
-        <p onClick={() => dispatch(authLogout())} p="10px">
-          Logout
-        </p>
-      ) : (
-        <p padding="10px">Signup</p>
+      label: auth.data.isAuthenticated ? null : (
+        <Link to="/signup">
+          <p>Signup</p>
+        </Link>
       ),
       key: "0",
     },
@@ -98,6 +99,7 @@ const Navbar = () => {
       key: "4",
     },
   ];
+
   return (
     <div className="container">
       <div className="row v-center">
@@ -349,7 +351,7 @@ const Navbar = () => {
             <Link to="/bag">
               <HiOutlineShoppingBag className="sideIcons" />
               <span>1</span>
-              <p className="display">Bag</p>
+              <p className="display">Cart</p>
             </Link>
           </div>
           <div className="navIcons hamburger">

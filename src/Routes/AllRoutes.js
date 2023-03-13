@@ -18,9 +18,9 @@ const AllRoutes = () => {
     <>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/" element={<Home />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>

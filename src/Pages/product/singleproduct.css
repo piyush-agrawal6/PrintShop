@@ -35,7 +35,6 @@
   width: 42%;
 }
 .singleProName {
-  border-bottom: 1px solid rgb(213, 213, 213);
   margin-right: 2rem;
 }
 .singleProName > h2:nth-child(1) {
@@ -74,7 +73,7 @@
   font-weight: 600;
   color: #282c3f;
   font-size: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   margin-bottom: 10px;
 }
 .singleItemDetails > div s {
@@ -89,7 +88,7 @@
 }
 .singleItemDetails > p {
   font-size: 13px;
-  color: #14958f;
+  color: #25c0e5;
   font-weight: 600;
   margin: 10px 0;
 }
@@ -129,18 +128,17 @@
 .addToCart {
   border: none;
   color: white;
-  background-color: #ff3f6c;
+  background-color: #25c0e5;
 }
 .addToCart:hover {
-  background-color: #f75177;
+  background-color: #25c0e5;
 }
 .addToList {
   background-color: white;
-  border: 1px solid rgb(195, 195, 195);
+  color: #23c831;
+  border: 2px solid #23c831;
 }
-.addToList:hover {
-  border: 1px solid rgb(47, 47, 47);
-}
+
 .singleProDescription {
   padding: 1rem 1rem 1rem 0;
 }
