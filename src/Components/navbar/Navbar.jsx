@@ -55,9 +55,17 @@ const Navbar = () => {
           Logout
         </p>
       ) : (
-        <Link padding="10px" to="/login">
-          Login / Signup
-        </Link>
+        <p padding="10px">Login with Google</p>
+      ),
+      key: "0",
+    },
+    {
+      label: auth.data.isAuthenticated ? (
+        <p onClick={() => dispatch(authLogout())} p="10px">
+          Logout
+        </p>
+      ) : (
+        <p padding="10px">Signup</p>
       ),
       key: "0",
     },
