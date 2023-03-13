@@ -5,7 +5,7 @@ import ProComp from "../../Components/product/ProComp";
 import { getProduct } from "../../Redux/product/action";
 import { useSelector, useDispatch } from "react-redux";
 import { Skeleton } from "antd";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 const Product = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get("gender");
