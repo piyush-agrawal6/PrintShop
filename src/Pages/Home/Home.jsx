@@ -12,14 +12,13 @@ const Home = () => {
       <div className="HomeCarousel">
         <Carousel infiniteLoop autoPlay>
           <div className="image">
-            <img src="./assets/slider/1.gif" alt="images" />
-          </div>
-
-          <div className="image">
-            <img src="./assets/slider/2.jpg" alt="images" />
+            <img src="./assets/slider/slider6.jpeg" alt="images" />
           </div>
           <div className="image">
             <img src="./assets/slider/slider.jpg" alt="images" />
+          </div>
+          <div className="image">
+            <img src="./assets/slider/slider7.gif" alt="images" />
           </div>
         </Carousel>
       </div>

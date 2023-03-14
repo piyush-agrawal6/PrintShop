@@ -38,6 +38,7 @@
   margin-right: 2rem;
 }
 .singleProName > h2:nth-child(1) {
+  font-size: 30px;
   font-weight: 600;
   color: rgb(29, 28, 28);
 }

@@ -85,7 +85,7 @@ const SingleProduct = () => {
         </div>
         <div className="singleProDetails">
           <div className="singleProName">
-            <h2>{product.brand}</h2>
+            <h2>Just Print Karo</h2>
             <h2>{product.title}</h2>
           </div>
           <div className="singleItemDetails">
@@ -101,7 +101,15 @@ const SingleProduct = () => {
             <h3>
               PRODUCT DETAILS <BiDetail />
             </h3>
-            <p>{product.description}</p>
+            {/* <p>{product.description}</p> */}
+            <li>product description</li>
+            <li>product description</li>
+            <li>product description</li>
+            <li>product description</li>
+            <li>product description</li>
+            <li>product description</li>
+            <li>product description</li>
+            <li>product description</li>
             {/* <h4>Color : {product.color}</h4> */}
             {product.size ? <h4>{product.size}</h4> : null}
           </div>
@@ -109,7 +117,7 @@ const SingleProduct = () => {
             <p>Select Quantity : {proQuantity}</p>
             <Slider
               defaultValue={1}
-              max={product.stock > 20 ? 20 : product.stock}
+              max={product.stock > 20 ? 100 : product.stock}
               onChange={(e) => setQuantity(e)}
             />
           </div>
