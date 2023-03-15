@@ -102,7 +102,7 @@ const Navbar = () => {
                 <div className="subMenu megaMenu menuColumn">
                   <div className="menuList">
                     <ul>
-                      <p>Clothing</p>
+                      <p>Fabric Printing</p>
                       <li>
                         <Link>T-shirts</Link>
                       </li>
@@ -128,7 +128,7 @@ const Navbar = () => {
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Stationary</p>
+                      <p>Office Stationeries</p>
                       <li>
                         <Link>Envelopes</Link>
                       </li>
@@ -157,7 +157,7 @@ const Navbar = () => {
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Personalized Gifts</p>
+                      <p>Customized Gifts</p>
                       <li>
                         <Link>Photo Frames </Link>
                       </li>
@@ -177,7 +177,7 @@ const Navbar = () => {
                         <Link>Gift Hampers</Link>
                       </li>
                       <li>
-                        <Link>Drinkware</Link>
+                        <Link>Drink wares</Link>
                       </li>
                       <li>
                         <Link>Mouse Pads</Link>
@@ -189,7 +189,7 @@ const Navbar = () => {
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Marketing</p>
+                      <p>Advertising & Publishing</p>
                       <li>
                         <Link>Banners</Link>
                       </li>
@@ -209,18 +209,18 @@ const Navbar = () => {
                         <Link>IDs and Lanyards</Link>
                       </li>
                       <li>
-                        <Link>Brochures</Link>
-                      </li>
-                      <li>
                         <Link>Leaflets</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Printouts</p>
+                      <p>Paper Printings</p>
                       <li>
                         <Link>Visiting cards</Link>
+                      </li>
+                      <li>
+                        <Link>Brochures</Link>
                       </li>
                       <li>
                         <Link>Rate cards</Link>
@@ -244,7 +244,13 @@ const Navbar = () => {
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Labels & stickers</p>
+                      <p>Graphics & logos</p>
+                      <li>
+                        <Link>Graphics</Link>
+                      </li>
+                      <li>
+                        <Link>Logos</Link>
+                      </li>
                       <li>
                         <Link>Labels</Link>
                       </li>
@@ -277,7 +283,7 @@ const Navbar = () => {
                 <Link to="/product">ALL PRODUCTS</Link>
               </p>
               <Collapse className="dropdownCategory">
-                <Panel header="Cloth Printing" key="1">
+                <Panel header="Fabric Printing" key="1">
                   <Link to="/product" className="categoryLink">
                     <p>T-shirts</p>
                   </Link>
@@ -300,7 +306,7 @@ const Navbar = () => {
                     <p>Apron</p>
                   </Link>
                 </Panel>
-                <Panel header="Stationary" key="2">
+                <Panel header="Office Stationeries" key="2">
                   <Link to="/product" className="categoryLink">
                     <p>Envelopes</p>
                   </Link>
@@ -326,7 +332,7 @@ const Navbar = () => {
                     <p>Letter Pads</p>
                   </Link>
                 </Panel>
-                <Panel header="Personalized Gifts" key="3">
+                <Panel header="Customized Gifts" key="3">
                   <Link to="/product" className="categoryLink">
                     <p>Photo Frames</p>
                   </Link>
@@ -355,7 +361,7 @@ const Navbar = () => {
                     <p>Mobile covers</p>
                   </Link>
                 </Panel>
-                <Panel header="Marketing" key="4">
+                <Panel header="Advertising & Publishing" key="4">
                   <Link to="/product" className="categoryLink">
                     <p>Banners</p>
                   </Link>
@@ -375,15 +381,15 @@ const Navbar = () => {
                     <p>IDs and Lanyards</p>
                   </Link>
                   <Link to="/product" className="categoryLink">
-                    <p>Brochures</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
                     <p>Leaflets</p>
                   </Link>
                 </Panel>
                 <Panel header="Paper Printing" key="5">
                   <Link to="/product" className="categoryLink">
                     <p> Visiting cards</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Brochures</p>
                   </Link>
                   <Link to="/product" className="categoryLink">
                     <p>Rate cards</p>
@@ -404,7 +410,7 @@ const Navbar = () => {
                     <p>Paper Bags</p>
                   </Link>
                 </Panel>
-                <Panel header="Labels & Stickers" key="6">
+                <Panel header="Graphics & logos" key="6">
                   <Link to="/product" className="categoryLink">
                     <p>Labels</p>
                   </Link>
