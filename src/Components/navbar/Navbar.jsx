@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsTruck } from "react-icons/bs";
 import { Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
-import logo from "./logo.jpg";
+import logo from "./logo.png";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
