@@ -7,11 +7,22 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { BsTruck } from "react-icons/bs";
-import { Collapse, Dropdown } from "antd";
+import { AiFillLock } from "react-icons/ai";
+import { Collapse, Drawer, Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.png";
 const { Panel } = Collapse;
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
@@ -480,13 +491,55 @@ const Navbar = () => {
               <p>Orders</p>
             </Link>
           </div>
-          <div className="navIcons">
-            <Link to="/bag">
+          <div className="navIcons" onClick={showDrawer}>
+            <Link>
               <HiOutlineShoppingBag className="sideIcons" />
               <span>1</span>
               <p className="display">Cart</p>
             </Link>
           </div>
+          <Drawer
+            width="550px"
+            title="CART - 3 Items"
+            placement="right"
+            onClose={onClose}
+            open={open}
+          >
+            <div className="CartDrawer">
+              <div className="CartCheckout">
+                <p>Shipping & taxes calculated at checkout</p>
+                <button>
+                  <AiFillLock />
+                  CHECKOUT - ₹2345.00
+                </button>
+              </div>
+              <div className="CartProducts">
+                <div className="CartProDetails">
+                  <div className="CartLeft">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
+                      alt="img"
+                    />
+                  </div>
+                  <div className="CartM">
+                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                    <div>
+                      <div>
+                        <button>-</button>
+                        <input type="text" />
+                        <button>+</button>
+                      </div>
+                      <p>Remove</p>
+                    </div>
+                    <p>300 pcs.</p>
+                  </div>
+                  <div className="CartLeft">
+                    <p>₹2345.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Drawer>
           <div className="navIcons hamburger">
             <RxHamburgerMenu className="sideIcons" onClick={handleClick} />
           </div>
