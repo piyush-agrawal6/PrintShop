@@ -128,7 +128,6 @@
   .homeHeader {
     width: 90%;
     margin: 1rem auto;
-    font-size: 14px;
   }
 }
 @media (max-width: 320px) {
