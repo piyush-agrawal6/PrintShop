@@ -250,11 +250,10 @@ li a {
     background-color: white;
     left: -100%;
     top: 0;
-    height: 140%;
+    height: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 10px 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: scroll;
     transition: all 0.4s ease;
   }
   .menu > ul {

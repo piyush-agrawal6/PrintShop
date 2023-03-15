@@ -279,6 +279,13 @@ const Navbar = () => {
               <Collapse className="dropdownCategory">
                 <Panel header="Cloth Printing" key="1">
                   <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
                 </Panel>
                 <Panel header="Stationary" key="2">
                   <p>Options</p>
@@ -286,13 +293,21 @@ const Navbar = () => {
                 <Panel header="Personalized Gifts" key="3">
                   <p>Options</p>
                 </Panel>
-                <Panel header="Marketing" key="3">
+                <Panel header="Marketing" key="4">
                   <p>Options</p>
                 </Panel>
-                <Panel header="Paper Printing" key="3">
+                <Panel header="Paper Printing" key="5">
                   <p>Options</p>
                 </Panel>
-                <Panel header="Labels & Stickers" key="3">
+                <Panel header="Labels & Stickers" key="6">
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
+                  <p>Options</p>
                   <p>Options</p>
                 </Panel>
               </Collapse>
