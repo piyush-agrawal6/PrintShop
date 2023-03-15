@@ -98,7 +98,7 @@ const Navbar = () => {
               </p>
 
               <li className="menuItem">
-                <Link>All Products</Link>
+                <Link to="product">All Products</Link>
                 <div className="subMenu megaMenu menuColumn">
                   <div className="menuList">
                     <ul>
@@ -278,37 +278,151 @@ const Navbar = () => {
               </p>
               <Collapse className="dropdownCategory">
                 <Panel header="Cloth Printing" key="1">
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
+                  <Link to="/product" className="categoryLink">
+                    <p>T-shirts</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Polo T-shirts</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Bags</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Caps</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Jacket</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Sweatshirt</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Apron</p>
+                  </Link>
                 </Panel>
                 <Panel header="Stationary" key="2">
-                  <p>Options</p>
+                  <Link to="/product" className="categoryLink">
+                    <p>Envelopes</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Calenders</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Notebooks</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Stamps</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Booklets</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Notepads</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Dairy</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Letter Pads</p>
+                  </Link>
                 </Panel>
                 <Panel header="Personalized Gifts" key="3">
-                  <p>Options</p>
+                  <Link to="/product" className="categoryLink">
+                    <p>Photo Frames</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Mugs</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Pens</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Albums</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Canvas</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Gift Hampers</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Drink wares</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Mouse Pads</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Mobile covers</p>
+                  </Link>
                 </Panel>
                 <Panel header="Marketing" key="4">
-                  <p>Options</p>
+                  <Link to="/product" className="categoryLink">
+                    <p>Banners</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Posters</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Signs</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Flyers</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Packaging boxes</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>IDs and Lanyards</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Brochures</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Leaflets</p>
+                  </Link>
                 </Panel>
                 <Panel header="Paper Printing" key="5">
-                  <p>Options</p>
+                  <Link to="/product" className="categoryLink">
+                    <p> Visiting cards</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Rate cards</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Menu Cards</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Bill books</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Invitation Cards</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Bookmarks</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Paper Bags</p>
+                  </Link>
                 </Panel>
                 <Panel header="Labels & Stickers" key="6">
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
-                  <p>Options</p>
+                  <Link to="/product" className="categoryLink">
+                    <p>Labels</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Stickers</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Laptop skins</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Mobile skins</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Tags</p>
+                  </Link>
+                  <Link to="/product" className="categoryLink">
+                    <p>Tapes</p>
+                  </Link>
                 </Panel>
               </Collapse>
               <p className="mobItem" onClick={handleClick}>
