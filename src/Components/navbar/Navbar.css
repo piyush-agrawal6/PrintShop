@@ -121,6 +121,7 @@ li a {
   font-weight: 600;
 }
 .searchIcon {
+  margin: 0 10px;
   color: rgb(91, 91, 91);
   font-size: 19px;
 }
@@ -194,11 +195,9 @@ li a {
 }
 @media (max-width: 1230px) {
   .item-right {
-    flex: 0 0 17%;
+    flex: 0 0 40%;
   }
-  .navSearch {
-    display: none;
-  }
+
   .hide {
     display: flex;
     justify-content: center;
@@ -213,6 +212,12 @@ li a {
 @media (max-width: 920px) {
   .logo img {
     width: 110px;
+  }
+  .sideIcons {
+    margin-top: 7px;
+  }
+  .navIcons span {
+    bottom: 50%;
   }
   .hamburger {
     display: flex;
@@ -316,6 +321,11 @@ li a {
     padding: 1rem 0;
   }
 }
+@media (max-width: 730px) {
+  .item-right {
+    flex: 0 0 60%;
+  }
+}
 @media (max-width: 520px) {
   .container {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
@@ -348,6 +358,11 @@ li a {
     line-height: 50px;
     height: 25px;
     font-weight: 600;
+  }
+}
+@media (max-width: 440px) {
+  .navSearch {
+    display: none;
   }
 }
 @media (max-width: 320px) {

@@ -321,14 +321,14 @@ const Navbar = () => {
           >
             <input
               type="text"
-              placeholder="Search for products, brands and more"
+              placeholder="Search products"
               onChange={({ target }) => setKeyword(target.value)}
             />
             <BiSearch className="searchIcon" onClick={handleSearchClick} />
           </div>
-          <div className="navIcons hide">
+          {/* <div className="navIcons hide">
             <BiSearch className="sideIcons" />
-          </div>
+          </div> */}
           <div className="navIcons display">
             <Dropdown
               menu={{ items, selectable: true, defaultSelectedKeys: ["0"] }}
