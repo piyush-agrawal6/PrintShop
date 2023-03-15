@@ -125,14 +125,11 @@
     row-gap: 0px;
   }
   .footerHeader {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media (max-width: 355px) {
   .footer {
     padding: 1.5rem 2rem;
-  }
-  .footerHeader {
-    font-size: 12px;
   }
 }
