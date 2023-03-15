@@ -508,7 +508,7 @@ const Navbar = () => {
             <div className="CartDrawer">
               <div className="CartCheckout">
                 <p>Shipping & taxes calculated at checkout</p>
-                <button>
+                <button className="CartCheckoutBtn">
                   <AiFillLock />
                   CHECKOUT - ₹2345.00
                 </button>
@@ -521,19 +521,65 @@ const Navbar = () => {
                       alt="img"
                     />
                   </div>
-                  <div className="CartM">
+                  <div className="CartMiddle">
                     <p>Rapid Swirl Shaker Bottle (700ml)</p>
                     <div>
                       <div>
                         <button>-</button>
-                        <input type="text" />
+                        <input type="text" value={1} />
                         <button>+</button>
                       </div>
-                      <p>Remove</p>
+                      <u>Remove</u>
                     </div>
-                    <p>300 pcs.</p>
+                    <p>300 pcs</p>
                   </div>
+                  <div className="CartRight">
+                    <p>₹2345.00</p>
+                  </div>
+                </div>
+                <div className="CartProDetails">
                   <div className="CartLeft">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
+                      alt="img"
+                    />
+                  </div>
+                  <div className="CartMiddle">
+                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                    <div>
+                      <div>
+                        <button>-</button>
+                        <input type="text" value={1} />
+                        <button>+</button>
+                      </div>
+                      <u>Remove</u>
+                    </div>
+                    <p>300 pcs</p>
+                  </div>
+                  <div className="CartRight">
+                    <p>₹2345.00</p>
+                  </div>
+                </div>
+                <div className="CartProDetails">
+                  <div className="CartLeft">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
+                      alt="img"
+                    />
+                  </div>
+                  <div className="CartMiddle">
+                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                    <div>
+                      <div>
+                        <button>-</button>
+                        <input type="text" value={1} />
+                        <button>+</button>
+                      </div>
+                      <u>Remove</u>
+                    </div>
+                    <p>300 pcs</p>
+                  </div>
+                  <div className="CartRight">
                     <p>₹2345.00</p>
                   </div>
                 </div>
