@@ -48,7 +48,7 @@ const Navbar = () => {
           <p>To access orders and manage account</p>
         </div>
       ),
-      key: "-1",
+      key: "1",
     },
     {
       label: auth.data.isAuthenticated ? (
@@ -60,7 +60,7 @@ const Navbar = () => {
           <p>login</p>
         </Link>
       ),
-      key: "0",
+      key: "2",
     },
     {
       label: auth.data.isAuthenticated ? null : (
@@ -68,34 +68,13 @@ const Navbar = () => {
           <p>Signup</p>
         </Link>
       ),
-      key: "0",
-    },
-    {
-      type: "divider",
-    },
-    {
-      label: <Link to="/">Home</Link>,
-      key: "1",
-    },
-    {
-      type: "divider",
-    },
-    {
-      label: <Link to="/orders">Orders</Link>,
-      key: "2",
-    },
-    {
-      type: "divider",
-    },
-    {
-      label: <Link to="/wishlist">Wishlist</Link>,
       key: "3",
     },
     {
       type: "divider",
     },
     {
-      label: <Link to="/profile">Account</Link>,
+      label: <Link to="/profile">Profile</Link>,
       key: "4",
     },
   ];
@@ -288,18 +267,38 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
-              {/* <li className="menuItem">
+              <li className="menuItem display">
                 <Link>About</Link>
-              </li> */}
+              </li>
               <li className="menuItem">
                 <Link>Blogs</Link>
               </li>
-
               <p className="mobItem" onClick={handleClick}>
-                <Link to="/signup">Login / Signup</Link>
+                <Link to="/product">ALL PRODUCTS</Link>
               </p>
               <p className="mobItem" onClick={handleClick}>
-                <Link to="/admin">Admin</Link>
+                <Link to="/product">CLOTHING</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/product">STATIONARY</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/product">PERSONALIZED GIFTS</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/product">MARKETING</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/product">PAPER PRINTING</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/product">LABELS & STICKERS</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/signup">Login</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/signup">Blogs</Link>
               </p>
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/profile">Profile</Link>
@@ -326,9 +325,6 @@ const Navbar = () => {
             />
             <BiSearch className="searchIcon" onClick={handleSearchClick} />
           </div>
-          {/* <div className="navIcons hide">
-            <BiSearch className="sideIcons" />
-          </div> */}
           <div className="navIcons display">
             <Dropdown
               menu={{ items, selectable: true, defaultSelectedKeys: ["0"] }}

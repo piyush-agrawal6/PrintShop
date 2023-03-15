@@ -259,7 +259,7 @@ li a {
     width: 100%;
     line-height: 1;
     margin: 0;
-    display: block;
+    display: none;
     flex-direction: column;
     border-bottom: 1px solid rgb(219, 218, 218);
     padding: 0 30px;
@@ -280,6 +280,7 @@ li a {
     align-items: center;
     font-size: 14px;
     padding: 0 30px;
+    border-bottom: 1px solid rgb(226, 226, 226);
   }
   .menu > ul > p:nth-child(1) {
     pointer-events: none;
@@ -287,9 +288,9 @@ li a {
   .menu > ul > p > a {
     text-decoration: none;
     line-height: 50px;
-    height: 50px;
+    height: 45px;
     color: rgb(20, 20, 20);
-    font-weight: 300;
+    font-weight: 600;
     width: 100%;
   }
   .mobItem {
