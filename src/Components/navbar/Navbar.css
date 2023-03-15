@@ -29,6 +29,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.dropdownCategory {
+  display: none;
+}
 .item-left {
   flex: 0 0 15%;
 }
@@ -197,7 +200,6 @@ li a {
   .item-right {
     flex: 0 0 40%;
   }
-
   .hide {
     display: flex;
     justify-content: center;
@@ -212,6 +214,9 @@ li a {
 @media (max-width: 920px) {
   .logo img {
     width: 110px;
+  }
+  .dropdownCategory {
+    display: block;
   }
   .sideIcons {
     margin-top: 7px;

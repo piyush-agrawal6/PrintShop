@@ -7,10 +7,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { BsTruck } from "react-icons/bs";
-import { Dropdown } from "antd";
+import { Collapse, Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.png";
-
+const { Panel } = Collapse;
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -276,24 +276,26 @@ const Navbar = () => {
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/product">ALL PRODUCTS</Link>
               </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/product">CLOTHING</Link>
-              </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/product">STATIONARY</Link>
-              </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/product">PERSONALIZED GIFTS</Link>
-              </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/product">MARKETING</Link>
-              </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/product">PAPER PRINTING</Link>
-              </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/product">LABELS & STICKERS</Link>
-              </p>
+              <Collapse className="dropdownCategory">
+                <Panel header="Cloth Printing" key="1">
+                  <p>Options</p>
+                </Panel>
+                <Panel header="Stationary" key="2">
+                  <p>Options</p>
+                </Panel>
+                <Panel header="Personalized Gifts" key="3">
+                  <p>Options</p>
+                </Panel>
+                <Panel header="Marketing" key="3">
+                  <p>Options</p>
+                </Panel>
+                <Panel header="Paper Printing" key="3">
+                  <p>Options</p>
+                </Panel>
+                <Panel header="Labels & Stickers" key="3">
+                  <p>Options</p>
+                </Panel>
+              </Collapse>
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/signup">Login</Link>
               </p>
