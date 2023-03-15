@@ -53,9 +53,6 @@ const Footer = () => {
               <li>
                 <Link to="/orders">Orders</Link>
               </li>
-              <li>
-                <Link to="/signup">Create Account</Link>
-              </li>
             </ul>
           </div>
           <div className="footerList">
