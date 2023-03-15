@@ -288,9 +288,9 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
-              <li className="menuItem">
+              {/* <li className="menuItem">
                 <Link>About</Link>
-              </li>
+              </li> */}
               <li className="menuItem">
                 <Link>Blogs</Link>
               </li>

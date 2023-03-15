@@ -22,32 +22,8 @@ const Home = () => {
           </div>
         </Carousel>
       </div>
-      <div className="homeNav">
-        <div>
-          <Link>
-            <img src="./assets/navitems/men.webp" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/navitems/women.webp" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/navitems/kids.webp" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/navitems/beauty.webp" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/navitems/footwear.webp" alt="" />
-          </Link>
-        </div>
+      <div>
+        <div className="homeNav"></div>
       </div>
       <p className="homeHeader">TOP SELLERS</p>
       <div className="homeColors">
