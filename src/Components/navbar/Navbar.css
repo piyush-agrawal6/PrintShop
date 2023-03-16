@@ -512,6 +512,101 @@ li a {
   .navSearch {
     display: none;
   }
+
+  /* 
+
+
+  .CartDrawer {
+    width: 100%;
+    height: 100%;
+  }
+  .CartCheckout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    border-bottom: 1px solid rgb(186, 186, 186);
+    padding-bottom: 20px;
+  }
+  .CartCheckout p {
+    color: rgb(117, 117, 117);
+  }
+  .CartCheckoutBtn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    letter-spacing: 2px;
+  }
+  .CartProDetails {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+  }
+  .CartLeft {
+    flex: 0 0 23%;
+  }
+  .CartLeft img {
+    width: 100%;
+  }
+  .CartMiddle {
+    flex: 0 0 57%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .CartMiddle > div {
+    display: flex;
+    gap: 20px;
+  }
+  .CartMiddle > div > u {
+    color: rgb(87, 87, 87);
+    cursor: pointer;
+  }
+  .CartMiddle > div > div > input {
+    width: 28px;
+    height: 28px;
+    outline: none;
+  }
+  .CartMiddle > div > div > button {
+    width: 28px;
+    height: 28px;
+    outline: none;
+  }
+  .CartMiddle div > input {
+    text-align: center;
+    border: 1px solid gray;
+    border-left: none;
+    border-right: none;
+  }
+  .CartMiddle div > button {
+    border: 1px solid gray;
+    font-weight: 700;
+    background-color: white;
+    cursor: pointer;
+  }
+  .CartMiddle div > button:nth-child(1) {
+    border-right: none;
+  }
+  .CartMiddle div > button:nth-child(3) {
+    border-left: none;
+  }
+  .CartRight {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(33, 215, 33);
+    font-weight: 600;
+  }
+   */
 }
 @media (max-width: 320px) {
   .sideIcons {

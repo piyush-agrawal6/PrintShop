@@ -11,6 +11,10 @@ import { AiFillLock } from "react-icons/ai";
 import { Collapse, Drawer, Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.png";
+import { Grid, Tag } from "antd";
+
+const { useBreakpoint } = Grid;
+
 const { Panel } = Collapse;
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -31,6 +35,8 @@ const Navbar = () => {
   const onOrderClose = () => {
     setOpenOrder(false);
   };
+  const abcd = useBreakpoint();
+  console.log(abcd);
 
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -501,7 +507,7 @@ const Navbar = () => {
             </Link>
           </div>
           <Drawer
-            width="550px"
+            width={abcd.xs ? "350px" : abcd.sm ? "550px" : "600px"}
             title="ORDER - 3 Items"
             placement="right"
             onClose={onOrderClose}
@@ -520,7 +526,7 @@ const Navbar = () => {
                     <p>Rapid Swirl Shaker Bottle (700ml)</p>
                     <div>
                       <div>
-                      <button>Qt.</button>
+                        <button>Qt.</button>
                         <button>1</button>
                       </div>
                       <u>Cancel</u>
@@ -544,11 +550,11 @@ const Navbar = () => {
             </Link>
           </div>
           <Drawer
-            width="550px"
             title="CART - 3 Items"
             placement="right"
             onClose={onClose}
             open={open}
+            className="CartDrawerWidth"
           >
             <div className="CartDrawer">
               <div className="CartCheckout">
