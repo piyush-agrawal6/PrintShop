@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: rgba(110, 192, 212, 0.683);
+  background-color: rgba(211, 246, 255, 0.683);
 }
 .signupContainer {
   width: 900px;
@@ -61,8 +61,8 @@ span {
   margin: 5px 0;
 }
 .signupDetail > div:nth-child(2) p a {
-  color: #fd436e;
-  font-weight: 500;
+  color: #25c0e5;
+  font-weight: 700;
   cursor: pointer;
 }
 .googlesignup {

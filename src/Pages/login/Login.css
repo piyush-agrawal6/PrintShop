@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #fdeeeb;
+  background-color: rgba(211, 246, 255, 0.683);
 }
 .loginContainer {
   width: 900px;
@@ -16,7 +16,7 @@
   width: 43%;
 }
 .loginImage img {
-  width: 100%;
+  width: 80%;
 }
 .loginDetail {
   padding: 2rem 4rem;
@@ -48,7 +48,7 @@ span {
   margin: 1rem 0;
   font-size: 15px;
   letter-spacing: 1px;
-  background-color: #fd436e;
+  background-color: rgb(37 192 229);
   border: none;
   color: white;
   cursor: pointer;
@@ -60,8 +60,8 @@ span {
   margin: 5px 0;
 }
 .loginDetail > div:nth-child(2) p a {
-  color: #fd436e;
-  font-weight: 500;
+  color: rgb(37 192 229);
+  font-weight: 700;
   cursor: pointer;
 }
 @media (max-width: 1000px) {

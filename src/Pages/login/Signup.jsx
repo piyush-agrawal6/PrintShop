@@ -10,7 +10,6 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: "",
   });
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
@@ -22,18 +21,11 @@ const Signup = () => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (
-      formData.name.trim() !== "" &&
-      formData.email.trim() !== "" &&
-      formData.password.trim() !== ""
-    ) {
-      if (
-        formData.name.trim().length < 4 ||
-        formData.password.trim().length < 4
-      ) {
+    if (formData.name.trim() !== "" && formData.email.trim() !== "") {
+      if (formData.name.trim().length < 4) {
         messageApi.open({
           type: "error",
-          content: "Name and password must be at least 4 characters",
+          content: "Name must be at least 4 characters",
           duration: 3,
         });
       } else {
@@ -106,13 +98,6 @@ const Signup = () => {
                 type="email"
                 placeholder="Enter email"
               />
-              <input
-                name="password"
-                value={formData.password}
-                onChange={handleFormChange}
-                type="password"
-                placeholder="Set a password"
-              />
               <p>
                 Already a User ? <Link to="/login">Login .</Link>
               </p>
@@ -121,10 +106,6 @@ const Signup = () => {
                 {auth.userRegister.loading ? "Loading" : "CONTINUE"}
               </button>
             </form>
-            {/* <button className="googlesignup" id="SigninDiv">
-              SIGNUP WITH GOOGLE
-              <FcGoogle style={{ fontsize: "1.8rem" }} />
-            </button> */}
             <div id="SigninDiv" className="googlesignup"></div>
           </div>
         </div>
