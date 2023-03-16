@@ -31,7 +31,7 @@ const Profile = () => {
     <div className="profile">
       <div className="profileCon">
         <div className="profileImage">
-          <img src={user?.avatar} alt="avatar" />
+          <img src={user?.avatar ? user?.avatar : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT_ucOxVCJz4xQSLeHbPJr-g7EesYe7YIbZa6H4OmfnP4ctE1CyQYv35GuYk726XJn38B9neaQbx0&usqp=CAU&ec=48600112"} alt="avatar" />
           <p>{user?.email}</p>
           <button onClick={() => setModal2Open(true)}>EDIT PROFILE</button>
         </div>
@@ -64,21 +64,13 @@ const Profile = () => {
             onCancel={() => setModal2Open(false)}
             style={{ width: { sm: "100%" } }}
           >
-            <form onSubmit={handleFormSubmit}>
+            <form className="profileForm" onSubmit={handleFormSubmit}>
               <input
                 name="name"
                 value={formData.name}
                 onChange={handleFormChange}
                 type="text"
                 placeholder="Full name"
-              />
-              <br />
-              <input
-                name="phone"
-                value={formData.phone}
-                onChange={handleFormChange}
-                type="tel"
-                placeholder="Enter phone number"
               />
               <br />
               <input
@@ -89,6 +81,50 @@ const Profile = () => {
                 placeholder="Paste avatar link"
               />
               <br />
+              <select name="gender" onChange={handleFormChange}>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Others</option>
+              </select>
+              <br></br>
+              <p>Shipping Details : </p>
+              <br />
+              <input
+                name="shipping"
+                value={formData.shipping}
+                onChange={handleFormChange}
+                type="text"
+                placeholder="Shipping details"
+              />
+              <input
+                name="shipping"
+                value={formData.shipping}
+                onChange={handleFormChange}
+                type="text"
+                placeholder="Shipping details"
+              />
+              <input
+                name="shipping"
+                value={formData.shipping}
+                onChange={handleFormChange}
+                type="text"
+                placeholder="Shipping details"
+              />
+              <input
+                name="shipping"
+                value={formData.shipping}
+                onChange={handleFormChange}
+                type="text"
+                placeholder="Shipping details"
+              />
+              <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleFormChange}
+                type="tel"
+                placeholder="Enter phone number"
+              />
               <input
                 name="shipping"
                 value={formData.shipping}
@@ -97,14 +133,6 @@ const Profile = () => {
                 placeholder="Shipping details"
               />
               <br />
-              <select name="gender" onChange={handleFormChange}>
-                <option value="">Select gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Others</option>
-              </select>
-              <br />
-
               <button type="submit">Cancel</button>
               <button type="submit">Save</button>
             </form>

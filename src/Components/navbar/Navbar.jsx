@@ -300,7 +300,7 @@ const Navbar = () => {
                 </div>
               </li>
               <li className="menuItem display">
-                <Link>About</Link>
+                <Link>Bulk Order</Link>
               </li>
               <li className="menuItem">
                 <Link>Blogs</Link>
@@ -458,13 +458,16 @@ const Navbar = () => {
                 </Panel>
               </Collapse>
               <p className="mobItem" onClick={handleClick}>
-                <Link to="/signup">Login</Link>
+                <Link to="/signup">Bulk Order</Link>
               </p>
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/signup">Blogs</Link>
               </p>
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/profile">Profile</Link>
+              </p>
+              <p className="mobItem" onClick={handleClick}>
+                <Link to="/signup">Login</Link>
               </p>
             </ul>
           </nav>

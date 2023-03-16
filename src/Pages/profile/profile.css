@@ -16,7 +16,7 @@
   justify-content: space-between;
 }
 .profileImage img {
-  width: 25%;
+  width: 100px;
 }
 .profileImage p {
   font-size: 14px;
@@ -44,6 +44,23 @@
 }
 .profileDetails > div > p:nth-child(1) {
   width: 40%;
+}
+.profileForm input , select{
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.profileForm button{
+  border: none;
+  outline: none;
+  background-color: rgb(72, 180, 230);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 5px 15px;
+  margin-right: 10px;
+  font-size: 15px;
 }
 @media (max-width: 700px) {
   .profile {
