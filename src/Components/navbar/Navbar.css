@@ -15,7 +15,7 @@
   justify-content: space-between;
 }
 .container > div > div {
-  padding: 1.2rem 0;
+  padding: 0.8rem 0;
 }
 .container > div > div:nth-child(2) {
   padding: 0;
@@ -223,7 +223,7 @@ li a {
   flex: 0 0 23%;
 }
 .CartLeft img {
-  width: 100%;
+  width: 90%;
 }
 .CartMiddle {
   flex: 0 0 57%;
@@ -291,7 +291,7 @@ li a {
   flex: 0 0 23%;
 }
 .orderLeft img {
-  width: 100%;
+  width: 90%;
 }
 .orderMiddle {
   flex: 0 0 57%;
@@ -475,6 +475,9 @@ li a {
   }
 }
 @media (max-width: 520px) {
+  .navSearch {
+    display: none;
+  }
   .container {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
   }
@@ -509,10 +512,6 @@ li a {
   }
 }
 @media (max-width: 440px) {
-  .navSearch {
-    display: none;
-  }
-
   /* 
 
 

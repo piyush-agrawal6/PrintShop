@@ -466,9 +466,6 @@ const Navbar = () => {
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/profile">Profile</Link>
               </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/orders">Orders</Link>
-              </p>
             </ul>
           </nav>
         </div>
@@ -500,10 +497,10 @@ const Navbar = () => {
               </Link>
             </Dropdown>
           </div>
-          <div className="navIcons display" onClick={showOrderDrawer}>
+          <div className="navIcons" onClick={showOrderDrawer}>
             <Link>
               <BsTruck className="sideIcons" />
-              <p>Orders</p>
+              <p className="display">Orders</p>
             </Link>
           </div>
           <Drawer
@@ -550,6 +547,7 @@ const Navbar = () => {
             </Link>
           </div>
           <Drawer
+            width={abcd.xs ? "350px" : abcd.sm ? "550px" : "600px"}
             title="CART - 3 Items"
             placement="right"
             onClose={onClose}
