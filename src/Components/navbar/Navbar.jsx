@@ -504,7 +504,7 @@ const Navbar = () => {
             </Link>
           </div>
           <Drawer
-            width={abcd.xs ? "350px" : abcd.sm ? "550px" : "600px"}
+            width={abcd.xs ? "350px" : abcd.sm ? "550px" : "550px"}
             title="ORDER - 3 Items"
             placement="right"
             onClose={onOrderClose}
@@ -547,7 +547,7 @@ const Navbar = () => {
             </Link>
           </div>
           <Drawer
-            width={abcd.xs ? "350px" : abcd.sm ? "550px" : "600px"}
+            width={abcd.xs ? "300px" : abcd.sm ? "550px" : "550px"}
             title="CART - 3 Items"
             placement="right"
             onClose={onClose}
@@ -563,6 +563,29 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="CartProducts">
+                <div className="CartProDetails">
+                  <div className="CartLeft">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
+                      alt="img"
+                    />
+                  </div>
+                  <div className="CartMiddle">
+                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                    <div>
+                      <div>
+                        <button>-</button>
+                        <input type="text" value={1} />
+                        <button>+</button>
+                      </div>
+                      <u>Remove</u>
+                    </div>
+                    <p>300 pcs</p>
+                  </div>
+                  <div className="CartRight">
+                    <p>₹2345.00</p>
+                  </div>
+                </div>
                 <div className="CartProDetails">
                   <div className="CartLeft">
                     <img
