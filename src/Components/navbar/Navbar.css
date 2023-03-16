@@ -277,6 +277,63 @@ li a {
   color: rgb(33, 215, 33);
   font-weight: 600;
 }
+
+.orderDrawer {
+  width: 100%;
+  height: 100%;
+}
+.orderProDetails {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+.orderLeft {
+  flex: 0 0 23%;
+}
+.orderLeft img {
+  width: 100%;
+}
+.orderMiddle {
+  flex: 0 0 57%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.orderMiddle > div {
+  display: flex;
+  gap: 20px;
+}
+.orderMiddle > div > u {
+  color: rgb(87, 87, 87);
+  cursor: pointer;
+}
+.orderMiddle > div > div > button {
+  width: 28px;
+  height: 28px;
+  outline: none;
+}
+.orderMiddle div > button {
+  border: 1px solid gray;
+  font-weight: 700;
+  background-color: white;
+  cursor: pointer;
+}
+.orderMiddle div > button:nth-child(1) {
+  border-right: none;
+}
+.orderRight {
+  flex: 0 0 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(33, 215, 33);
+  flex-direction: column;
+  font-weight: 600;
+  gap: 10px;
+}
+
 @media (max-width: 1600px) {
   .megaMenu {
     left: 45%;

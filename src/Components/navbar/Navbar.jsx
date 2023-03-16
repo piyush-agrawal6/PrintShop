@@ -22,6 +22,15 @@ const Navbar = () => {
   const onClose = () => {
     setOpen(false);
   };
+  const [openOrder, setOpenOrder] = useState(false);
+
+  const showOrderDrawer = () => {
+    setOpenOrder(true);
+  };
+
+  const onOrderClose = () => {
+    setOpenOrder(false);
+  };
 
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -485,12 +494,48 @@ const Navbar = () => {
               </Link>
             </Dropdown>
           </div>
-          <div className="navIcons display">
-            <Link to="/admin">
+          <div className="navIcons display" onClick={showOrderDrawer}>
+            <Link>
               <BsTruck className="sideIcons" />
               <p>Orders</p>
             </Link>
           </div>
+          <Drawer
+            width="550px"
+            title="ORDER - 3 Items"
+            placement="right"
+            onClose={onOrderClose}
+            open={openOrder}
+          >
+            <div className="orderDrawer">
+              <div className="oderProducts">
+                <div className="orderProDetails">
+                  <div className="orderLeft">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
+                      alt="img"
+                    />
+                  </div>
+                  <div className="orderMiddle">
+                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                    <div>
+                      <div>
+                      <button>Qt.</button>
+                        <button>1</button>
+                      </div>
+                      <u>Cancel</u>
+                    </div>
+                    <p>300 pcs</p>
+                  </div>
+                  <div className="orderRight">
+                    <p>Order Status :</p>
+                    <p>Pending</p>
+                    <p>₹2345.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Drawer>
           <div className="navIcons" onClick={showDrawer}>
             <Link>
               <HiOutlineShoppingBag className="sideIcons" />
@@ -514,52 +559,6 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="CartProducts">
-                <div className="CartProDetails">
-                  <div className="CartLeft">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
-                      alt="img"
-                    />
-                  </div>
-                  <div className="CartMiddle">
-                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
-                    <div>
-                      <div>
-                        <button>-</button>
-                        <input type="text" value={1} />
-                        <button>+</button>
-                      </div>
-                      <u>Remove</u>
-                    </div>
-                    <p>300 pcs</p>
-                  </div>
-                  <div className="CartRight">
-                    <p>₹2345.00</p>
-                  </div>
-                </div>
-                <div className="CartProDetails">
-                  <div className="CartLeft">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
-                      alt="img"
-                    />
-                  </div>
-                  <div className="CartMiddle">
-                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
-                    <div>
-                      <div>
-                        <button>-</button>
-                        <input type="text" value={1} />
-                        <button>+</button>
-                      </div>
-                      <u>Remove</u>
-                    </div>
-                    <p>300 pcs</p>
-                  </div>
-                  <div className="CartRight">
-                    <p>₹2345.00</p>
-                  </div>
-                </div>
                 <div className="CartProDetails">
                   <div className="CartLeft">
                     <img
