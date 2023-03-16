@@ -519,6 +519,34 @@ li a {
     font-size: 15px;
     font-weight: 500;
   }
+  .orderProDetails {
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+  .orderLeft {
+    flex: 0 0 20%;
+  }
+  .orderLeft img {
+    width: 100%;
+  }
+  .orderMiddle {
+    flex: 0 0 80%;
+    gap: 5px;
+  }
+  .orderMiddle > div {
+    font-size: 12px;
+    gap: 10px;
+  }
+  .orderMiddle > div > div > button {
+    width: 23px;
+    height: 23px;
+  }
+  .orderRight {
+    padding-top: 5px;
+    flex: 0 0 100%;
+    flex-direction: row;
+    font-weight: 500;
+  }
 }
 @media (max-width: 520px) {
   .navSearch {

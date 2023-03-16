@@ -547,7 +547,7 @@ const Navbar = () => {
             </Link>
           </div>
           <Drawer
-            width={abcd.xs ? "300px" : abcd.sm ? "550px" : "550px"}
+            width={abcd.xs ? "320px" : abcd.sm ? "550px" : "550px"}
             title="CART - 3 Items"
             placement="right"
             onClose={onClose}
@@ -594,7 +594,7 @@ const Navbar = () => {
                     />
                   </div>
                   <div className="CartMiddle">
-                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                    <p>Rapid Swirl Shaker Bottle Bottle Bottle (700ml)</p>
                     <div>
                       <div>
                         <button>-</button>
