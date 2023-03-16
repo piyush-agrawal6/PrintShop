@@ -85,7 +85,9 @@ const SingleProduct = () => {
         </div>
         <div className="singleProDetails">
           <div className="singleProName">
-            <h2>Just Print Karo</h2>
+            <h2>
+              <span>J</span>ust<span>P</span>rint<span>K</span>aro
+            </h2>
             <h2>{product.title}</h2>
           </div>
           <div className="singleItemDetails">
@@ -94,14 +96,16 @@ const SingleProduct = () => {
               <span>({product.discount}% OFF)</span>
             </div>
             <h5 style={{ color: product.stock ? "#14958f" : "red" }}>
-              Status : {product.stock ? "InStock" : "Out Of Stock"}
+              Status :{" "}
+              {product.stock && product.stock < 10
+                ? `Only ${product.stock} left`
+                : "In Stock"}
             </h5>
           </div>
           <div className="singleProDescription">
             <h3>
               PRODUCT DETAILS <BiDetail />
             </h3>
-            {/* <p>{product.description}</p> */}
             <li>product description</li>
             <li>product description</li>
             <li>product description</li>
@@ -109,15 +113,22 @@ const SingleProduct = () => {
             <li>product description</li>
             <li>product description</li>
             <li>product description</li>
-            <li>product description</li>
-            {/* <h4>Color : {product.color}</h4> */}
             {product.size ? <h4>{product.size}</h4> : null}
           </div>
           <div className="singleProQuantity">
-            <p>Select Quantity : {proQuantity}</p>
+            <p>
+              Select Quantity :{" "}
+              <input
+                onChange={(e) => setQuantity(e.target.value)}
+                className="singleProQuantityInput"
+                type="number"
+                max={200}
+                value={proQuantity}
+              />
+            </p>
             <Slider
               defaultValue={1}
-              max={product.stock > 20 ? 100 : product.stock}
+              max={50}
               onChange={(e) => setQuantity(e)}
             />
           </div>
@@ -136,32 +147,34 @@ const SingleProduct = () => {
       <div className="singleProReviews">
         <div className="postInput">
           <input
+            style={{ display: "none" }}
             type="file"
             name="myImage"
             ref={imageRef}
             onChange={imageChange}
           />
         </div>
-        <button onClick={handleSubmit}>Share</button>
-        <div
-          onClick={() => imageRef.current.click()}
-          className="postOptionIcon"
-        >
-          <BsImage /> <span>Photo</span>
+        <div onClick={() => imageRef.current.click()} className="uploadOption">
+          Upload Images / Designs / Logos / Photos{" "}
+          <button>
+            UPLOAD <BsImage />
+          </button>
         </div>
-        {img[0] &&
-          img.map((elem, i) => {
-            return (
-              <div>
-                <RxCross2
-                  onClick={() =>
-                    setImg([...img.filter((file) => file !== elem)])
-                  }
-                />
-                <img src={URL.createObjectURL(elem)} alt="img" />
-              </div>
-            );
-          })}
+        <div className="uploadedImages">
+          {img[0] &&
+            img.map((elem, i) => {
+              return (
+                <div>
+                  <RxCross2
+                    onClick={() =>
+                      setImg([...img.filter((file) => file !== elem)])
+                    }
+                  />
+                  <img src={URL.createObjectURL(elem)} alt="img" />
+                </div>
+              );
+            })}
+        </div>
       </div>
     </div>
   );

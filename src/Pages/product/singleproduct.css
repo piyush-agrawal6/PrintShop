@@ -42,6 +42,9 @@
   font-weight: 600;
   color: rgb(29, 28, 28);
 }
+.singleProName > h2 span {
+  color: red;
+}
 .singleProName > h2:nth-child(2) {
   font-weight: 300;
   color: rgb(82, 82, 82);
@@ -102,6 +105,13 @@
   width: 50%;
   padding: 15px 0;
 }
+.singleProQuantityInput {
+  width: 70px;
+  height: 30px;
+  padding: 0 10px;
+  text-align: center;
+  outline: none;
+}
 .singleProButtons {
   display: flex;
   flex-wrap: wrap;
@@ -161,6 +171,46 @@
   color: rgb(73, 73, 73);
   margin: 5px 0;
 }
+.singleProReviews {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.uploadOption {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.uploadOption button {
+  border: none;
+  outline: none;
+  background-color: #25c0e5;
+  color: white;
+  padding: 0.8rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.uploadedImages {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.uploadedImages > div {
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+}
+.uploadedImages > div img {
+  width: 100%;
+}
 @media (max-width: 1000px) {
   .singlePro {
     flex-direction: column;
@@ -198,15 +248,11 @@
   .singleProComponent {
     padding-top: 3.7rem;
   }
-
   .singleProButtons {
     gap: 0.5rem;
     padding-right: 0;
     padding-bottom: 1.5rem;
   }
-  /* .singleProIcons {
-  font-size: 22px;
-} */
   .singleProButtons button {
     width: 49%;
     padding: 0.8rem 2rem;
