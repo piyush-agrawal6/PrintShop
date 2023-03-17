@@ -1,27 +1,66 @@
 import * as types from "./types";
 import axios from "axios";
 
-//Register User
+//send otp
 export const registerUser = (userData) => async (dispatch) => {
   try {
-    dispatch({ type: types.REGISTER_USER_REQUEST });
     const data = await axios.post(
-      `https://busy-rose-earthworm-cap.cyclic.app/user/new`,
+      `https://shy-lion-snaps.cyclic.app/user/new`,
       userData
     );
-    console.log(data.data);
-    dispatch({
-      type: types.REGISTER_USER_SUCCESS,
-      payload: {
-        token: data.data.token,
-        message: data.data.message,
-        user: data.data.user,
-      },
-    });
+    return data.data;
   } catch (error) {
-    dispatch({
-      type: types.REGISTER_USER_ERROR,
-    });
+    console.log(error);
+  }
+};
+
+
+
+
+//Register User
+export const checkOTP = (form) => async (dispatch) => {
+  try {
+    const data = await axios.post(
+      `https://shy-lion-snaps.cyclic.app/user/register`,
+      form
+    );
+    if (data.data.message === "user registered successfully") {
+      dispatch({
+        type: types.REGISTER_USER_SUCCESS,
+        payload: {
+          token: data.data.token,
+          message: data.data.message,
+          user: data.data.user,
+        },
+      });
+    }
+    return data.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+//Register User
+export const googleRegister = (form) => async (dispatch) => {
+  try {
+    const data = await axios.post(
+      `https://shy-lion-snaps.cyclic.app/user/googleregister`,
+      form
+    );
+    // if (data.data.message === "user registered successfully") {
+    //   dispatch({
+    //     type: types.REGISTER_USER_SUCCESS,
+    //     payload: {
+    //       token: data.data.token,
+    //       message: data.data.message,
+    //       user: data.data.user,
+    //     },
+    //   });
+    // }
+    return data.data;
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -51,25 +90,13 @@ export const registerUser = (userData) => async (dispatch) => {
 export const authLogin = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.LOGIN_USER_REQUEST });
-
     const res = await axios.post(
-      "https://busy-rose-earthworm-cap.cyclic.app/user/login",
+      "https://shy-lion-snaps.cyclic.app/user/login",
       data
     );
-    console.log(res);
-    localStorage.setItem("user", JSON.stringify(res.data.user));
-    dispatch({
-      type: types.LOGIN_USER_SUCCESS,
-      payload: {
-        token: res.data.token,
-        message: res.data.message,
-        user: res.data.user,
-      },
-    });
+    return res.data;
   } catch (error) {
-    dispatch({
-      type: types.LOGIN_USER_ERROR,
-    });
+    console.log(error);
   }
 };
 

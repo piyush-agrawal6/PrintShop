@@ -3,14 +3,18 @@ import "./Otp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { message } from "antd";
-import { authLogin } from "../../Redux/auth/action";
+import { authLogin, checkOTP } from "../../Redux/auth/action";
 const Otp = () => {
+  const registerEmail = localStorage.getItem("registerEmail");
   const [formData, setFormData] = useState({
-    email: "",
+    OTP: "",
+    email: registerEmail,
   });
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth);
+
+  const navigate = useNavigate();
   console.log(auth);
   // const navigate = useNavigate();
   const handleFormChange = (e) => {
@@ -18,7 +22,24 @@ const Otp = () => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(authLogin(formData));
+    console.log(formData);
+    dispatch(checkOTP(formData)).then((response) => {
+      if (response.message === "Incorrect OTP") {
+        messageApi.open({
+          type: "error",
+          content: "Incorrect OTP",
+          duration: 3,
+        });
+      } else if (response.message === "error") {
+        messageApi.open({
+          type: "info",
+          content: "Something went wrong, please try again",
+          duration: 3,
+        });
+      } else {
+        return navigate("/");
+      }
+    });
   };
   return (
     <div className="login">
@@ -33,10 +54,10 @@ const Otp = () => {
           <div>
             <form onSubmit={handleFormSubmit}>
               <input
-                name="email"
-                value={formData.email}
+                name="OTP"
+                value={formData.OTP}
                 onChange={handleFormChange}
-                type="email"
+                type="text"
                 placeholder="OTP"
               />
               <p>
@@ -44,7 +65,7 @@ const Otp = () => {
               </p>
               <button type="submit">
                 {contextHolder}
-                {auth.userRegister.loading ? "Loading" : "ENTER OTP"}
+                ENTER OTP
               </button>
             </form>
           </div>

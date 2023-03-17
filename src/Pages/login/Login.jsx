@@ -3,7 +3,7 @@ import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { message } from "antd";
-import { authLogin } from "../../Redux/auth/action";
+import { authLogin, googleRegister } from "../../Redux/auth/action";
 import jwt_decode from "jwt-decode";
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,19 +13,63 @@ const Login = () => {
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth);
   console.log(auth);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(authLogin(formData));
+    dispatch(authLogin(formData)).then((res) => {
+      if (res.message === "User does not exist") {
+        messageApi.open({
+          type: "info",
+          content: "User doesn't already exists , Please signup.",
+          duration: 3,
+        });
+      } else if (res.message === "error") {
+        messageApi.open({
+          type: "info",
+          content: "Something went wrong, please try again",
+          duration: 3,
+        });
+      } else {
+        localStorage.setItem("registerEmail", formData.email);
+        return navigate("/otp");
+      }
+    });
   };
 
   function handleCallbackResponse(res) {
-    console.log("Google Id", res.credential);
     let value = jwt_decode(res.credential);
-    console.log(value);
+    if (value.email_verified) {
+      dispatch(
+        googleRegister({
+          name: value.given_name + " " + value.family_name,
+          email: value.email,
+          avatar: value.picture,
+        })
+      ).then((res) => {
+        if (res.message === "error") {
+          return messageApi.open({
+            type: "info",
+            content: "Something went wrong, please try again",
+            duration: 3,
+          });
+        }
+        messageApi.open({
+          type: "info",
+          content: "Login Successfully",
+          duration: 3,
+        });
+        return navigate("/");
+      });
+    } else {
+      messageApi.open({
+        type: "info",
+        content: "Incorrect Email Address",
+        duration: 3,
+      });
+    }
     document.getElementById("SigninDiv").hidden = true;
   }
 

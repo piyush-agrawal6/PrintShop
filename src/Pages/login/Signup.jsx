@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Signup.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../../Redux/auth/action";
-import { FcGoogle } from "react-icons/fc";
+import { googleRegister, registerUser } from "../../Redux/auth/action";
 import jwt_decode from "jwt-decode";
 import { message } from "antd";
 const Signup = () => {
@@ -29,7 +28,25 @@ const Signup = () => {
           duration: 3,
         });
       } else {
-        // dispatch(registerUser(formData));
+        console.log(formData);
+        dispatch(registerUser(formData)).then((res) => {
+          if (res.message === "User already exists") {
+            messageApi.open({
+              type: "info",
+              content: "User already exists , Please login.",
+              duration: 3,
+            });
+          } else if (res.message === "error") {
+            messageApi.open({
+              type: "info",
+              content: "Something went wrong, please try again",
+              duration: 3,
+            });
+          } else {
+            localStorage.setItem("registerEmail", formData.email);
+            return navigate("/otp");
+          }
+        });
       }
     } else {
       messageApi.open({
@@ -49,9 +66,36 @@ const Signup = () => {
   }
 
   function handleCallbackResponse(res) {
-    console.log("Google Id", res.credential);
     let value = jwt_decode(res.credential);
-    console.log(value);
+    if (value.email_verified) {
+      dispatch(
+        googleRegister({
+          name: value.given_name + " " + value.family_name,
+          email: value.email,
+          avatar: value.picture,
+        })
+      ).then((res) => {
+        if (res.message === "error") {
+          return messageApi.open({
+            type: "info",
+            content: "Something went wrong, please try again",
+            duration: 3,
+          });
+        }
+        messageApi.open({
+          type: "info",
+          content: "Login Successfully",
+          duration: 3,
+        });
+        return navigate("/");
+      });
+    } else {
+      messageApi.open({
+        type: "info",
+        content: "Incorrect Email Address",
+        duration: 3,
+      });
+    }
     document.getElementById("SigninDiv").hidden = true;
   }
 
@@ -103,7 +147,7 @@ const Signup = () => {
               </p>
               <button type="submit">
                 {contextHolder}
-                {auth.userRegister.loading ? "Loading" : "CONTINUE"}
+                CONTINUE
               </button>
             </form>
             <div id="SigninDiv" className="googlesignup"></div>
