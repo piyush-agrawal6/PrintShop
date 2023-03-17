@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import "./Login.css";
+import React, { useState } from "react";
+import "./Otp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { message } from "antd";
 import { authLogin } from "../../Redux/auth/action";
-import jwt_decode from "jwt-decode";
-const Login = () => {
+const Otp = () => {
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -21,30 +20,6 @@ const Login = () => {
     e.preventDefault();
     dispatch(authLogin(formData));
   };
-
-  function handleCallbackResponse(res) {
-    console.log("Google Id", res.credential);
-    let value = jwt_decode(res.credential);
-    console.log(value);
-    document.getElementById("SigninDiv").hidden = true;
-  }
-
-  useEffect(() => {
-    window.google.accounts.id.initialize({
-      client_id:
-        "577292365515-han2ihachrs8u89s6r0ev7i8iutu7f99.apps.googleusercontent.com",
-      callback: handleCallbackResponse,
-    });
-
-    window.google.accounts.id.renderButton(
-      document.getElementById("SigninDiv"),
-      {
-        theme: "outline",
-        size: "large",
-      }
-    );
-    window.google.accounts.id.prompt();
-  }, []);
   return (
     <div className="login">
       <div className="loginContainer">
@@ -53,7 +28,7 @@ const Login = () => {
         </div>
         <div className="loginDetail">
           <div>
-            <h3>Login</h3>
+            <h3>Enter the otp sent to your mail.</h3>
           </div>
           <div>
             <form onSubmit={handleFormSubmit}>
@@ -62,16 +37,15 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleFormChange}
                 type="email"
-                placeholder="Enter email"
+                placeholder="OTP"
               />
               <p>
-                New User ? <Link to="/signup">Signup .</Link>
+                Login with different email ? <Link to="/login">Login .</Link>
               </p>
               <button type="submit">
                 {contextHolder}
-                {auth.userRegister.loading ? "Loading" : "CONTINUE"}
+                {auth.userRegister.loading ? "Loading" : "ENTER OTP"}
               </button>
-              <div id="SigninDiv" className="googlesignup"></div>
             </form>
           </div>
         </div>
@@ -80,4 +54,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Otp;

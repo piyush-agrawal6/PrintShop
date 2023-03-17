@@ -6,6 +6,7 @@ import Admin from "../Pages/admin/Admin";
 import Bag from "../Pages/bag/Bag";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/login/Login";
+import Otp from "../Pages/login/Otp";
 import Signup from "../Pages/login/Signup";
 import Product from "../Pages/product/Product";
 import SingleProduct from "../Pages/product/SingleProduct";
@@ -18,6 +19,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/otp" element={<Otp />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
