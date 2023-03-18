@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import MetaData from "../../Components/MetaData";
+import { getCartProducts } from "../../Redux/bag/action";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector((store) => store.auth);
+  console.log(auth.data.user._id);
+  useEffect(() => {
+    dispatch(getCartProducts(auth.data.user._id));
+  }, [dispatch, auth.data.user._id]);
   return (
     <div>
       <MetaData title={"Home Page"} />

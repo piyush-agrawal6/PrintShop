@@ -1,6 +1,21 @@
 import * as types from "./types";
 import axios from "axios";
 
+//get cart products
+export const getCartProducts = (id) => async (dispatch) => {
+  try {
+    const data = await axios.get(
+      `https://shy-lion-snaps.cyclic.app/cart?userId=${id}`
+    );
+    dispatch({
+      type: types.GET_CART_SUCCESS,
+      payload: data.data.message,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 //add to cart
 export const addToCart = (cartData) => async (dispatch) => {
   try {

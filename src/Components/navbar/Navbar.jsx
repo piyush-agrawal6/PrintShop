@@ -12,9 +12,7 @@ import { Collapse, Drawer, Dropdown } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.png";
 import { Grid, Tag } from "antd";
-
 const { useBreakpoint } = Grid;
-
 const { Panel } = Collapse;
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -36,12 +34,12 @@ const Navbar = () => {
     setOpenOrder(false);
   };
   const abcd = useBreakpoint();
-  console.log(abcd);
-
   const [click, setClick] = useState(false);
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
+  const { cart } = useSelector((store) => store.carts);
+  console.log(cart);
   const dispatch = useDispatch();
   const handleClick = (param = "", value = "") => {
     setClick(!click);
@@ -58,7 +56,6 @@ const Navbar = () => {
       return navigate(`/product?keyword=${keyword.trim()}`);
     }
   };
-  console.log(auth.data.isAuthenticated);
   const styleA = { left: "-100%" };
   const styleB = { left: "0%" };
   const items = [
@@ -566,52 +563,30 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="CartProducts">
-                <div className="CartProDetails">
-                  <div className="CartLeft">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
-                      alt="img"
-                    />
-                  </div>
-                  <div className="CartMiddle">
-                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
-                    <div>
-                      <div>
-                        <button>-</button>
-                        <input type="text" value={1} />
-                        <button>+</button>
+                {cart?.map((elem) => {
+                  return (
+                    <div className="CartProDetails">
+                      <div className="CartLeft">
+                        <img src={elem.product?.images[0]} alt="img" />
                       </div>
-                      <u>Remove</u>
-                    </div>
-                    <p>300 pcs</p>
-                  </div>
-                  <div className="CartRight">
-                    <p>₹2345.00</p>
-                  </div>
-                </div>
-                <div className="CartProDetails">
-                  <div className="CartLeft">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
-                      alt="img"
-                    />
-                  </div>
-                  <div className="CartMiddle">
-                    <p>Rapid Swirl Shaker Bottle Bottle Bottle (700ml)</p>
-                    <div>
-                      <div>
-                        <button>-</button>
-                        <input type="text" value={1} />
-                        <button>+</button>
+                      <div className="CartMiddle">
+                        <p>{elem.product?.title}</p>
+                        <div>
+                          <div>
+                            <button>-</button>
+                            <input type="text" value={1} />
+                            <button>+</button>
+                          </div>
+                          <u>Remove</u>
+                        </div>
+                        <p>{elem.product?.set} pcs</p>
                       </div>
-                      <u>Remove</u>
+                      <div className="CartRight">
+                        <p>₹{elem.product?.off_price}</p>
+                      </div>
                     </div>
-                    <p>300 pcs</p>
-                  </div>
-                  <div className="CartRight">
-                    <p>₹2345.00</p>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </Drawer>
