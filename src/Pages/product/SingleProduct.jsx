@@ -13,7 +13,7 @@ import { BiDetail } from "react-icons/bi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BsImage, BsWhatsapp } from "react-icons/bs";
 import { addToCart } from "../../Redux/bag/action";
-import ReactWhatsapp from 'react-whatsapp';
+import ReactWhatsapp from "react-whatsapp";
 const SingleProduct = () => {
   const [img, setImg] = useState([]);
   const [imgLink, setImgLink] = useState([]);
@@ -153,11 +153,16 @@ const SingleProduct = () => {
                 ? "ADD TO CART"
                 : "LOGIN TO PLACE ORDER"}
             </button>
-            <button className="addToList">
-              <BsWhatsapp className="singleProIcons" />
-              ORDER ON WHATSAPP
-            </button>
-            <ReactWhatsapp number="8144110261" message="Hello World!!!" />
+            <ReactWhatsapp
+              style={{ border: "none", padding: 0 }}
+              number="8144110261"
+              message={`Hey can you give me some more information about this  product , Product ID : ${product._id}`}
+            >
+              <button className="addToList">
+                <BsWhatsapp className="singleProIcons" />
+                ORDER ON WHATSAPP
+              </button>
+            </ReactWhatsapp>
           </div>
         </div>
       </div>
