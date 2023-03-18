@@ -9,7 +9,6 @@ const initialState = {
     user: JSON.parse(localStorage.getItem("user")) || null,
   },
 };
-
 export function authReducer(state = initialState, { type, payload }) {
   switch (type) {
     case types.LOGIN_USER_REQUEST:
@@ -33,18 +32,6 @@ export function authReducer(state = initialState, { type, payload }) {
         ...state,
         userLogin: { loading: false, error: true, message: "Error" },
       };
-
-    case types.AUTH_LOGOUT:
-      localStorage.removeItem("token");
-      return {
-        ...state,
-        data: {
-          isAuthenticated: false,
-          token: null,
-          user: null,
-        },
-      };
-
     case types.REGISTER_USER_REQUEST:
       return {
         ...state,
@@ -65,10 +52,29 @@ export function authReducer(state = initialState, { type, payload }) {
           user: payload.user,
         },
       };
+    case types.UPDATE_USER_SUCCESS:
+      return {
+        ...state,
+        data: {
+          isAuthenticated: true,
+          token: payload.token,
+          user: payload.user,
+        },
+      };
     case types.REGISTER_USER_ERROR:
       return {
         ...state,
         userRegister: { loading: false, error: true, message: "Error" },
+      };
+    case types.AUTH_LOGOUT:
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        data: {
+          isAuthenticated: false,
+          token: null,
+          user: null,
+        },
       };
     default:
       return state;

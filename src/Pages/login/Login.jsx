@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { message } from "antd";
+import { Alert, message, Space, Spin } from "antd";
 import { authLogin, googleRegister } from "../../Redux/auth/action";
 import jwt_decode from "jwt-decode";
 const Login = () => {
@@ -13,6 +13,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth);
   console.log(auth);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -42,6 +43,7 @@ const Login = () => {
   function handleCallbackResponse(res) {
     let value = jwt_decode(res.credential);
     if (value.email_verified) {
+      setLoading(true);
       dispatch(
         googleRegister({
           name: value.given_name + " " + value.family_name,
@@ -56,6 +58,7 @@ const Login = () => {
             duration: 3,
           });
         }
+        setLoading(false);
         messageApi.open({
           type: "info",
           content: "Login Successfully",
@@ -116,6 +119,25 @@ const Login = () => {
                 {auth.userRegister.loading ? "Loading" : "CONTINUE"}
               </button>
               <div id="SigninDiv" className="googlesignup"></div>
+              <h1>
+                {loading ? (
+                  <Space
+                    style={{
+                      width: "100vw",
+                      height: "100vh",
+                      position: "absolute",
+                      backgroundColor: "rgba(0,0,0,0.2)",
+                      top: "0",
+                      left: "0",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItem: "center",
+                    }}
+                  >
+                    <Spin size="large" tip="Loading..."></Spin>
+                  </Space>
+                ) : null}
+              </h1>
             </form>
           </div>
         </div>

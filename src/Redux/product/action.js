@@ -8,7 +8,7 @@ export const getProduct =
     try {
       dispatch({ type: types.ALL_PRODUCT_REQUEST });
       const data = await axios.get(
-        `https://busy-rose-earthworm-cap.cyclic.app/product?keyword=${
+        `https://shy-lion-snaps.cyclic.app/product?keyword=${
           keyword || ""
         }&gender=${gender || ""}&page=${page}&categories=${categories || ""}`
       );
@@ -26,7 +26,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: types.PRODUCT_DETAILS_REQUEST });
     const data = await axios.get(
-      `https://busy-rose-earthworm-cap.cyclic.app/product/${id}`
+      `https://shy-lion-snaps.cyclic.app/product/${id}`
     );
     dispatch({
       type: types.PRODUCT_DETAILS_SUCCESS,
