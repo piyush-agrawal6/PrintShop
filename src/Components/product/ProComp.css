@@ -2,12 +2,18 @@
   width: 100%;
   cursor: pointer;
   background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
 }
 .itemBox:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 }
 .itemImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  width: 250px;
+  height: 250px;
 }
 .itemImage img {
   width: 100%;
@@ -32,13 +38,13 @@
   font-size: 16px;
 }
 .itemDetails {
-  padding: 0 0.6rem;
+  padding: 0.5rem 0.8rem;
   line-height: 24px;
 }
 .itemDetails > h4 {
   font-weight: 600;
   color: #282c3f;
-  font-size: 16px;
+  font-size: 17px;
   height: 25px;
   overflow: hidden;
 }
@@ -54,7 +60,7 @@
   align-items: center;
   font-weight: 600;
   color: #282c3f;
-  font-size: 14px;
+  font-size: 17px;
 }
 .itemDetails > div s {
   font-size: 12px;

@@ -2,49 +2,51 @@ import React, { useEffect, useState } from "react";
 import "./Product.css";
 import { Select } from "antd";
 import ProComp from "../../Components/product/ProComp";
-import { getProduct } from "../../Redux/product/action";
+import { getProduct, sortProducts } from "../../Redux/product/action";
 import { useSelector, useDispatch } from "react-redux";
 import { Skeleton } from "antd";
 import { useLocation } from "react-router-dom";
 const Product = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get("gender");
-  const categories = new URLSearchParams(search).get("categories");
+  const categories = new URLSearchParams(search).get("category");
+  const subcategory = new URLSearchParams(search).get("subcategory");
   const keyword = new URLSearchParams(search).get("keyword");
   const [prevQuery, setPrevQuery] = useState(query);
+  const [shape, setShape] = useState("");
   const dispatch = useDispatch();
   let [page, setPage] = useState(1);
+  let [filter, setFilter] = useState("");
+  let [order, setOrder] = useState("");
   const {
     pro_loading,
     products: { data },
   } = useSelector((store) => store.products);
-  console.log(data);
+  const handle = (e) => {
+    if (e.target.value === "asc") {
+      setFilter("price");
+      setOrder("asc");
+    } else if (e.target.value === "desc") {
+      setFilter("price");
+      setOrder("desc");
+    } else {
+      setFilter("discount");
+      setOrder("desc");
+    }
+  };
+
   useEffect(() => {
     if (prevQuery !== query) {
       setPage(1);
     }
-    dispatch(getProduct(keyword, query, page, categories));
+    dispatch(getProduct(keyword, query, page, categories, subcategory));
     setPrevQuery(query);
-  }, [dispatch, keyword, query, page, prevQuery, categories]);
+  }, [dispatch, keyword, query, page, prevQuery, categories, subcategory]);
 
-  const sortOptions = [
-    {
-      label: "Better Discount",
-      value: "discount",
-    },
-    {
-      label: "Customer Ratings",
-      value: "rating",
-    },
-    {
-      label: "Price low to high",
-      value: "asc",
-    },
-    {
-      label: "Price high to low",
-      value: "desc",
-    },
-  ];
+  useEffect(() => {
+    dispatch(sortProducts(filter, order, shape));
+  }, [shape, filter, order, dispatch]);
+
   return (
     <div className="productCon">
       <div className="proContainer">
@@ -57,85 +59,21 @@ const Product = () => {
       </div>
       <div className="proBox">
         <div className="proFilters">
-          <div className="proSort">
-            <div>
-              <Select
-                size="large"
-                placeholder="Sort By"
-                style={{
-                  width: "100%",
-                  border: "1px solid gray",
-                  color: "black",
-                  borderRadius: "8px",
-                  outline: "none",
-                }}
-                options={sortOptions}
-              />
-            </div>
+          <div>
+            <select onChange={handle}>
+              <option value="">Sort by</option>
+              <option value="discount">Better Discount</option>
+              <option value="asc">Price low to high</option>
+              <option value="desc">Price high to low</option>
+            </select>
           </div>
-          <div className="proSort">
-            <div>
-              <Select
-                size="large"
-                placeholder="Sort By"
-                style={{
-                  width: "100%",
-                  border: "1px solid gray",
-                  color: "black",
-                  borderRadius: "8px",
-                  outline: "none",
-                }}
-                options={sortOptions}
-              />
-            </div>
-          </div>
-          <div className="proSort">
-            <div>
-              <Select
-                size="large"
-                placeholder="Sort By"
-                style={{
-                  width: "100%",
-                  border: "1px solid gray",
-                  color: "black",
-                  borderRadius: "8px",
-                  outline: "none",
-                }}
-                options={sortOptions}
-              />
-            </div>
-          </div>
-          <div className="proSort">
-            <div>
-              <Select
-                size="large"
-                placeholder="Sort By"
-                style={{
-                  width: "100%",
-                  border: "1px solid gray",
-                  color: "black",
-                  borderRadius: "8px",
-                  outline: "none",
-                }}
-                options={sortOptions}
-              />
-            </div>
-          </div>
-          <div className="proSort">
-            <div>
-              <Select
-                size="large"
-                placeholder="Sort By"
-                style={{
-                  width: "100%",
-                  border: "1px solid gray",
-                  color: "black",
-                  borderRadius: "8px",
-                  outline: "none",
-                }}
-                options={sortOptions}
-              />
-            </div>
+          <div>
+            <select onChange={(e) => setShape(e.target.value)}>
+              <option value="">Select Shape</option>
+              <option value="rectangular">Rectangular</option>
+              <option value="square">Square</option>
+              <option value="a4">A4</option>
+            </select>
           </div>
         </div>
         {pro_loading ? (

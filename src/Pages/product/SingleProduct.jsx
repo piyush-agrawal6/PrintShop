@@ -12,18 +12,32 @@ import { RxCross2 } from "react-icons/rx";
 import { BiDetail } from "react-icons/bi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BsImage, BsWhatsapp } from "react-icons/bs";
+import { addToCart } from "../../Redux/bag/action";
+import ReactWhatsapp from 'react-whatsapp';
 const SingleProduct = () => {
   const [img, setImg] = useState([]);
+  const [imgLink, setImgLink] = useState([]);
   const [image, setImage] = useState(null);
   const [loadings, setLoading] = useState(false);
   const imageRef = useRef();
   let { id } = useParams();
   const [proQuantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
-  const alreadyAdded = true;
+  const auth = useSelector((store) => store.auth);
   const { product, pro_loading: loading } = useSelector(
     (store) => store.products
   );
+
+  const addCart = () => {
+    let data = {
+      images: imgLink,
+      userId: auth.data.user._id,
+      product,
+      quantity: proQuantity,
+    };
+    dispatch(addToCart(data));
+  };
+
   let images = [];
   if (product) {
     for (let key in product.images) {
@@ -46,12 +60,9 @@ const SingleProduct = () => {
       }
     );
     const file = await res.json();
-    console.log(file);
     setImage(file.secure_url);
+    setImgLink([...imgLink, file.secure_url]);
     setLoading(false);
-  };
-  const handleSubmit = (e) => {
-    console.log(img);
   };
 
   useEffect(() => {
@@ -92,9 +103,16 @@ const SingleProduct = () => {
           </div>
           <div className="singleItemDetails">
             <div>
-              Rs. {product.price} <s>Rs. {product.off_price}</s>
+              <s>Rs. {product.price}</s>
               <span>({product.discount}% OFF)</span>
             </div>
+            {product?.set > 1 ? (
+              <div>
+                {product.set} starting at Rs. {product.off_price}
+              </div>
+            ) : (
+              <div>Rs. {product.off_price}</div>
+            )}
             <h5 style={{ color: product.stock ? "#14958f" : "red" }}>
               Status :{" "}
               {product.stock && product.stock < 10
@@ -106,13 +124,9 @@ const SingleProduct = () => {
             <h3>
               PRODUCT DETAILS <BiDetail />
             </h3>
-            <li>product description</li>
-            <li>product description</li>
-            <li>product description</li>
-            <li>product description</li>
-            <li>product description</li>
-            <li>product description</li>
-            <li>product description</li>
+            {product?.description?.map((elem) => {
+              return <li>{elem}</li>;
+            })}
             {product.size ? <h4>{product.size}</h4> : null}
           </div>
           <div className="singleProQuantity">
@@ -133,14 +147,17 @@ const SingleProduct = () => {
             />
           </div>
           <div className="singleProButtons">
-            <button className="addToCart">
+            <button onClick={addCart} className="addToCart">
               <HiOutlineShoppingBag className="singleProIcons" />
-              {alreadyAdded ? "PLEASE LOGIN" : "ADD TO BAG"}
+              {auth.data.isAuthenticated
+                ? "ADD TO CART"
+                : "LOGIN TO PLACE ORDER"}
             </button>
             <button className="addToList">
               <BsWhatsapp className="singleProIcons" />
               ORDER ON WHATSAPP
             </button>
+            <ReactWhatsapp number="8144110261" message="Hello World!!!" />
           </div>
         </div>
       </div>
