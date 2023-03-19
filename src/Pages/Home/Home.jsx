@@ -10,10 +10,9 @@ import { getCartProducts } from "../../Redux/bag/action";
 const Home = () => {
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth);
-  console.log(auth.data.user._id);
-  useEffect(() => {
-    dispatch(getCartProducts(auth.data.user._id));
-  }, [dispatch, auth.data.user._id]);
+  // useEffect(() => {
+  //   dispatch(getCartProducts(auth.data.user._id));
+  // }, [dispatch, auth.data.user]);
   return (
     <div>
       <MetaData title={"Home Page"} />
