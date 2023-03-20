@@ -125,172 +125,204 @@ const Navbar = () => {
                 <div className="subMenu megaMenu menuColumn">
                   <div className="menuList">
                     <ul>
-                      <p>Fabric Printing</p>
+                      <Link to="product?category=printing">
+                        Paper Printings
+                      </Link>
                       <li>
-                        <Link>T-shirts</Link>
+                        <Link to="product?subcategory=visitingcard">
+                          Visiting cards
+                        </Link>
                       </li>
                       <li>
-                        <Link>Polo T-shirts</Link>
+                        <Link to="product?subcategory=brochure">Brochures</Link>
                       </li>
                       <li>
-                        <Link>Bags</Link>
+                        <Link to="product?subcategory=ratecard">
+                          Rate cards
+                        </Link>
                       </li>
                       <li>
-                        <Link>Cap</Link>
+                        <Link to="product?subcategory=menucard">
+                          Menu Cards
+                        </Link>
                       </li>
                       <li>
-                        <Link>Jackets</Link>
+                        <Link to="product?subcategory=billbook">
+                          Bill books
+                        </Link>
                       </li>
                       <li>
-                        <Link>Sweatshirt</Link>
+                        <Link to="product?subcategory=invitation">
+                          Invitations
+                        </Link>
                       </li>
                       <li>
-                        <Link>Apron</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="menuList">
-                    <ul>
-                      <p>Office Stationeries</p>
-                      <li>
-                        <Link>Envelopes</Link>
+                        <Link to="product?subcategory=bookmark">Bookmarks</Link>
                       </li>
                       <li>
-                        <Link>Calender</Link>
-                      </li>
-                      <li>
-                        <Link>Notebooks</Link>
-                      </li>
-                      <li>
-                        <Link>Stamps</Link>
-                      </li>
-                      <li>
-                        <Link>Booklets</Link>
-                      </li>
-                      <li>
-                        <Link>Notepad</Link>
-                      </li>
-                      <li>
-                        <Link>Dairy</Link>
-                      </li>
-                      <li>
-                        <Link>Letter Pads</Link>
+                        <Link to="product?subcategory=paperbag">
+                          Paper Bags
+                        </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Customized Gifts</p>
+                      <Link to="product?category=marketing">
+                        Advertising & Publishing
+                      </Link>
                       <li>
-                        <Link>Photo Frames </Link>
+                        <Link to="product?subcategory=banner">Banners</Link>
                       </li>
                       <li>
-                        <Link>Mugs</Link>
+                        <Link to="product?subcategory=poster">Posters</Link>
                       </li>
                       <li>
-                        <Link>Pens</Link>
+                        <Link to="product?subcategory=sign">Signs</Link>
                       </li>
                       <li>
-                        <Link>Albums</Link>
+                        <Link to="product?subcategory=flyer">Flyers</Link>
                       </li>
                       <li>
-                        <Link>Canvas</Link>
+                        <Link to="product?subcategory=packaging">
+                          Packaging boxes
+                        </Link>
                       </li>
                       <li>
-                        <Link>Gift Hampers</Link>
+                        <Link to="product?subcategory=id">
+                          IDs and Lanyards
+                        </Link>
                       </li>
                       <li>
-                        <Link>Drink wares</Link>
-                      </li>
-                      <li>
-                        <Link>Mouse Pads</Link>
-                      </li>
-                      <li>
-                        <Link>Mobile covers</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="menuList">
-                    <ul>
-                      <p>Advertising & Publishing</p>
-                      <li>
-                        <Link>Banners</Link>
-                      </li>
-                      <li>
-                        <Link>Posters</Link>
-                      </li>
-                      <li>
-                        <Link>Signs</Link>
-                      </li>
-                      <li>
-                        <Link>Flyers</Link>
-                      </li>
-                      <li>
-                        <Link>Packaging boxes</Link>
-                      </li>
-                      <li>
-                        <Link>IDs and Lanyards</Link>
-                      </li>
-                      <li>
-                        <Link>Leaflets</Link>
+                        <Link to="product?subcategory=leaflet">Leaflets</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Paper Printings</p>
+                      <Link to="product?category=gifts">Customized Gifts</Link>
                       <li>
-                        <Link>Visiting cards</Link>
+                        <Link to="product?subcategory=photoframe">
+                          Photo Frames
+                        </Link>
                       </li>
                       <li>
-                        <Link>Brochures</Link>
+                        <Link to="product?subcategory=mug">Mugs</Link>
                       </li>
                       <li>
-                        <Link>Rate cards</Link>
+                        <Link to="product?subcategory=pen">Pens</Link>
                       </li>
                       <li>
-                        <Link>Menu Cards</Link>
+                        <Link to="product?subcategory=album">Albums</Link>
                       </li>
                       <li>
-                        <Link>Bill books</Link>
+                        <Link to="product?subcategory=canvas">Canvas</Link>
                       </li>
                       <li>
-                        <Link>Invitations</Link>
+                        <Link to="product?subcategory=hamper">
+                          Gift Hampers
+                        </Link>
                       </li>
                       <li>
-                        <Link>Bookmarks</Link>
+                        <Link to="product?subcategory=drinkware">
+                          Drink wares
+                        </Link>
                       </li>
                       <li>
-                        <Link>Paper Bags</Link>
+                        <Link to="product?subcategory=mousepad">
+                          Mouse Pads
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=cover">
+                          Mobile covers
+                        </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <p>Graphics & logos</p>
+                      <Link to="product?category=stationary">
+                        Office Stationeries
+                      </Link>
                       <li>
-                        <Link>Graphics</Link>
+                        <Link to="product?subcategory=envelope">Envelopes</Link>
                       </li>
                       <li>
-                        <Link>Logos</Link>
+                        <Link to="product?subcategory=calender">Calender</Link>
                       </li>
                       <li>
-                        <Link>Labels</Link>
+                        <Link to="product?subcategory=notebook">Notebooks</Link>
                       </li>
                       <li>
-                        <Link>Stickers</Link>
+                        <Link to="product?subcategory=stamp">Stamps</Link>
                       </li>
                       <li>
-                        <Link>Laptop skins</Link>
+                        <Link to="product?subcategory=booklet">Booklets</Link>
                       </li>
                       <li>
-                        <Link>Mobile skins</Link>
+                        <Link to="product?subcategory=notepad">Notepad</Link>
                       </li>
                       <li>
-                        <Link>Tags</Link>
+                        <Link to="product?subcategory=dairy">Dairy</Link>
                       </li>
                       <li>
-                        <Link>Tapes</Link>
+                        <Link to="product?subcategory=letterpad">Letter Pads</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="menuList">
+                    <ul>
+                      <Link to="product?category=graphic">Graphics & logos</Link>
+                      <li>
+                        <Link to="product?subcategory=graphic">Graphics</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=logo">Logos</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=label">Labels</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=sticker">Stickers</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=laptopskin">Laptop skins</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=mobileskin">Mobile skins</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=tag">Tags</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=tape">Tapes</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="menuList">
+                    <ul>
+                      <Link to="product?category=fabric">Fabric Printing</Link>
+                      <li>
+                        <Link to="product?subcategory=tshirt">T-shirts</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=polo">Polo T-shirts</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=bag">Bags</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=cap">Cap</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=jacket">Jackets</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=sweatshirt">Sweatshirt</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=apron">Apron</Link>
                       </li>
                     </ul>
                   </div>

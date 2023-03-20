@@ -45,9 +45,6 @@
   padding: 0;
   margin: 0;
 }
-.item-center ul li > a {
-  padding: 1.7rem 0;
-}
 .item-right {
   flex: 0 0 50%;
   display: flex;
@@ -153,15 +150,15 @@ li a {
   opacity: 1;
 }
 .megaMenu {
-  left: 35%;
-  transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-45%);
   overflow: auto;
 }
 .menuColumn {
-  max-width: 1400px;
+  max-width: 1700px;
   max-height: 700px;
   height: 400px;
-  width: 80%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
@@ -169,13 +166,13 @@ li a {
   flex: 0 0 15%;
   padding: 0 10px;
 }
-.menuList p {
+.menuList ul > a {
   color: #25c0e5;
   font-weight: 500;
-  line-height: 38px;
+  padding: 50px 0;
 }
 .menuList ul li {
-  line-height: 35px;
+  padding: 6px 0;
 }
 .menuList ul li a {
   color: rgb(63, 63, 63);
