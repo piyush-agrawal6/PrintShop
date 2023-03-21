@@ -81,42 +81,42 @@ const Home = () => {
       <div className="homeColors">
         <div>
           <Link>
-            <img src="./assets/colors/1.jpg" alt="" />
+            <img src="./assets/colors/9.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/2.jpg" alt="" />
+            <img src="./assets/colors/10.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/3.jpg" alt="" />
+            <img src="./assets/colors/11.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/4.jpg" alt="" />
+            <img src="./assets/colors/12.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/5.jpg" alt="" />
+            <img src="./assets/colors/13.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/6.jpg" alt="" />
+            <img src="./assets/colors/14.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/7.jpg" alt="" />
+            <img src="./assets/colors/15.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/8.jpg" alt="" />
+            <img src="./assets/colors/16.jpg" alt="" />
           </Link>
         </div>
      
