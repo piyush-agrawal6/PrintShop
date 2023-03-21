@@ -75,16 +75,7 @@ const Home = () => {
             <img src="./assets/colors/8.jpg" alt="" />
           </Link>
         </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/9.jpg" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/10.jpg" alt="" />
-          </Link>
-        </div>
+        
       </div>
       <p className="homeHeader">TRENDING PRODUCTS</p>
       <div className="homeColors">
@@ -128,16 +119,7 @@ const Home = () => {
             <img src="./assets/colors/8.jpg" alt="" />
           </Link>
         </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/9.jpg" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/10.jpg" alt="" />
-          </Link>
-        </div>
+     
       </div>
       <p className="homeHeader">CATEGORIES WE OFFER</p>
       <div className="homeColors">
@@ -181,16 +163,7 @@ const Home = () => {
             <img src="./assets/colors/8.jpg" alt="" />
           </Link>
         </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/9.jpg" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/10.jpg" alt="" />
-          </Link>
-        </div>
+        
       </div>
     </div>
   );

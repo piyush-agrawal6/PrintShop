@@ -39,7 +39,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
   const { cart } = useSelector((store) => store.carts);
-  console.log(cart);
   const dispatch = useDispatch();
   const handleClick = (param = "", value = "") => {
     setClick(!click);
@@ -93,7 +92,7 @@ const Navbar = () => {
       ),
       key: "3",
     },
-    
+
     {
       label: <Link to="/profile">Profile</Link>,
       key: "4",
@@ -265,13 +264,17 @@ const Navbar = () => {
                         <Link to="product?subcategory=dairy">Dairy</Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=letterpad">Letter Pads</Link>
+                        <Link to="product?subcategory=letterpad">
+                          Letter Pads
+                        </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="menuList">
                     <ul>
-                      <Link to="product?category=graphic">Graphics & logos</Link>
+                      <Link to="product?category=graphic">
+                        Graphics & logos
+                      </Link>
                       <li>
                         <Link to="product?subcategory=graphic">Graphics</Link>
                       </li>
@@ -285,10 +288,14 @@ const Navbar = () => {
                         <Link to="product?subcategory=sticker">Stickers</Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=laptopskin">Laptop skins</Link>
+                        <Link to="product?subcategory=laptopskin">
+                          Laptop skins
+                        </Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=mobileskin">Mobile skins</Link>
+                        <Link to="product?subcategory=mobileskin">
+                          Mobile skins
+                        </Link>
                       </li>
                       <li>
                         <Link to="product?subcategory=tag">Tags</Link>
@@ -317,7 +324,9 @@ const Navbar = () => {
                         <Link to="product?subcategory=jacket">Jackets</Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=sweatshirt">Sweatshirt</Link>
+                        <Link to="product?subcategory=sweatshirt">
+                          Sweatshirt
+                        </Link>
                       </li>
                       <li>
                         <Link to="product?subcategory=apron">Apron</Link>
@@ -540,34 +549,42 @@ const Navbar = () => {
             onClose={onOrderClose}
             open={openOrder}
           >
-            <div className="orderDrawer">
-              <div className="oderProducts">
-                <div className="orderProDetails">
-                  <div className="orderLeft">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
-                      alt="img"
-                    />
-                  </div>
-                  <div className="orderMiddle">
-                    <p>Rapid Swirl Shaker Bottle (700ml)</p>
-                    <div>
-                      <div>
-                        <button>Qt.</button>
-                        <button>1</button>
-                      </div>
-                      <u>Cancel</u>
+            {auth?.data?.isAuthenticated ? (
+              <div className="orderDrawer">
+                <div className="oderProducts">
+                  <div className="orderProDetails">
+                    <div className="orderLeft">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0503/7844/0897/products/Muscle-Nectar-Gym-Shaker-Bottle-700ml-1.jpg?v=1655277287&width=92"
+                        alt="img"
+                      />
                     </div>
-                    <p>300 pcs</p>
-                  </div>
-                  <div className="orderRight">
-                    <p>Order Status :</p>
-                    <p>Pending</p>
-                    <p>₹2345.00</p>
+                    <div className="orderMiddle">
+                      <p>Rapid Swirl Shaker Bottle (700ml)</p>
+                      <div>
+                        <div>
+                          <button>Qt.</button>
+                          <button>1</button>
+                        </div>
+                        <u>Cancel</u>
+                      </div>
+                      <p>300 pcs</p>
+                    </div>
+                    <div className="orderRight">
+                      <p>Order Status :</p>
+                      <p>Pending</p>
+                      <p>₹2345.00</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div className="loginBtn">
+                <Link to="/login">
+                  <button>PLEASE LOGIN</button>
+                </Link>
+              </div>
+            )}
           </Drawer>
           <div className="navIcons" onClick={showDrawer}>
             <Link>
@@ -576,6 +593,7 @@ const Navbar = () => {
               <p className="display">Cart</p>
             </Link>
           </div>
+
           <Drawer
             width={abcd.xs ? "320px" : abcd.sm ? "550px" : "550px"}
             title="CART - 3 Items"
@@ -584,42 +602,51 @@ const Navbar = () => {
             open={open}
             className="CartDrawerWidth"
           >
-            <div className="CartDrawer">
-              <div className="CartCheckout">
-                <p>Shipping & taxes calculated at checkout</p>
-                <button className="CartCheckoutBtn">
-                  <AiFillLock />
-                  CHECKOUT - ₹2345.00
-                </button>
-              </div>
-              <div className="CartProducts">
-                {cart?.map((elem) => {
-                  return (
-                    <div className="CartProDetails">
-                      <div className="CartLeft">
-                        <img src={elem.product?.images[0]} alt="img" />
-                      </div>
-                      <div className="CartMiddle">
-                        <p>{elem.product?.title}</p>
-                        <div>
-                          <div>
-                            <button>-</button>
-                            <input type="text" value={1} />
-                            <button>+</button>
-                          </div>
-                          <u>Remove</u>
+            {auth?.data?.isAuthenticated ? (
+              <div className="CartDrawer">
+                <div className="CartCheckout">
+                  <p>Shipping & taxes calculated at checkout</p>
+                  <button className="CartCheckoutBtn">
+                    <AiFillLock />
+                    CHECKOUT - ₹2345.00
+                  </button>
+                </div>
+                <div className="CartProducts">
+                  {cart?.map((elem) => {
+                    return (
+                      <div className="CartProDetails">
+                        <div className="CartLeft">
+                          <img src={elem.product?.images[0]} alt="img" />
                         </div>
-                        <p>{elem.product?.set} pcs</p>
+                        <div className="CartMiddle">
+                          <p>{elem.product?.title}</p>
+                          <div>
+                            <div>
+                              <button>-</button>
+                              <input type="text" value={1} />
+                              <button>+</button>
+                            </div>
+                            <u>Remove</u>
+                          </div>
+                          <p>{elem.product?.set} pcs</p>
+                        </div>
+                        <div className="CartRight">
+                          <p>₹{elem.product?.off_price}</p>
+                        </div>
                       </div>
-                      <div className="CartRight">
-                        <p>₹{elem.product?.off_price}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="loginBtn">
+                <Link to="/login">
+                  <button>PLEASE LOGIN</button>
+                </Link>
+              </div>
+            )}
           </Drawer>
+
           <div className="navIcons hamburger">
             <RxHamburgerMenu className="sideIcons" onClick={handleClick} />
           </div>
