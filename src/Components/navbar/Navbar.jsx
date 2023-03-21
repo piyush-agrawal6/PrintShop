@@ -93,9 +93,7 @@ const Navbar = () => {
       ),
       key: "3",
     },
-    {
-      type: "divider",
-    },
+    
     {
       label: <Link to="/profile">Profile</Link>,
       key: "4",
