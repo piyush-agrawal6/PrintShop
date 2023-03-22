@@ -39,6 +39,32 @@ const Navbar = () => {
   const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
   const { cart } = useSelector((store) => store.auth);
+  const [cartItems, setCartItems] = useState([...cart]);
+  const increment = (i) => {
+    setCartItems(
+      cartItems.map((elem, index) => {
+        if (index === i) {
+          elem.quantity += 1;
+        }
+        return elem;
+      })
+    );
+  };
+  const decrement = (i) => {
+    setCartItems(
+      cartItems.map((elem, index) => {
+        if (index === i && elem.quantity >= 1) {
+          elem.quantity -= 1;
+        }
+        return elem;
+      })
+    );
+  };
+  let totalPrice = 0;
+  for (let i = 0; i < cartItems.length; i++) {
+    totalPrice += cartItems[i].quantity * cartItems[i].product.off_price;
+  }
+  console.log(totalPrice);
   const dispatch = useDispatch();
   const handleClick = (param = "", value = "") => {
     setClick(!click);
@@ -612,7 +638,7 @@ const Navbar = () => {
                   </button>
                 </div>
                 <div className="CartProducts">
-                  {cart?.map((elem) => {
+                  {cartItems?.map((elem, i) => {
                     return (
                       <div className="CartProDetails">
                         <div className="CartLeft">
@@ -622,9 +648,9 @@ const Navbar = () => {
                           <p>{elem.product?.title}</p>
                           <div>
                             <div>
-                              <button>-</button>
-                              <input type="text" value={1} />
-                              <button>+</button>
+                              <button onClick={() => decrement(i)}>-</button>
+                              <input type="text" value={elem.quantity} />
+                              <button onClick={() => increment(i)}>+</button>
                             </div>
                             <u>Remove</u>
                           </div>

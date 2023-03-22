@@ -135,7 +135,7 @@ export const addToCart = (cartData) => async (dispatch) => {
     );
     dispatch({
       type: types.ADD_TO_CART_SUCCESS,
-      payload: { ...cartData.product, quantity: cartData.quantity },
+      payload: cartData,
     });
     console.log(data.data);
   } catch (error) {
