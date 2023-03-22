@@ -38,7 +38,7 @@ const Navbar = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
-  const { cart } = useSelector((store) => store.carts);
+  const { cart } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const handleClick = (param = "", value = "") => {
     setClick(!click);

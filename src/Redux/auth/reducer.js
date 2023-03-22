@@ -8,6 +8,8 @@ const initialState = {
     token: TOKEN,
     user: JSON.parse(localStorage.getItem("user")) || null,
   },
+  cart: [],
+  order: [],
 };
 export function authReducer(state = initialState, { type, payload }) {
   switch (type) {
@@ -51,6 +53,8 @@ export function authReducer(state = initialState, { type, payload }) {
           token: payload.token,
           user: payload.user,
         },
+        cart: payload.cart,
+        order: payload.order,
       };
     case types.UPDATE_USER_SUCCESS:
       return {
@@ -76,6 +80,12 @@ export function authReducer(state = initialState, { type, payload }) {
           user: null,
         },
       };
+    case types.GET_CART_SUCCESS: {
+      return { ...state, cart: payload };
+    }
+    case types.ADD_TO_CART_SUCCESS: {
+      return { ...state, cart: [...state.cart, payload] };
+    }
     default:
       return state;
   }

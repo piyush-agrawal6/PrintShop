@@ -1,19 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import MetaData from "../../Components/MetaData";
-import { getCartProducts } from "../../Redux/bag/action";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const auth = useSelector((store) => store.auth);
-
-  // useEffect(() => {
-  //   dispatch(getCartProducts(auth.data.user._id));
-  // }, [dispatch, auth.data.user]);
   return (
     <div>
       <MetaData title={"Home Page"} />
@@ -75,7 +67,6 @@ const Home = () => {
             <img src="./assets/colors/8.jpg" alt="" />
           </Link>
         </div>
-        
       </div>
       <p className="homeHeader">TRENDING PRODUCTS</p>
       <div className="homeColors">
@@ -119,7 +110,6 @@ const Home = () => {
             <img src="./assets/colors/16.jpg" alt="" />
           </Link>
         </div>
-     
       </div>
       <p className="homeHeader">CATEGORIES WE OFFER</p>
       <div className="homeColors">
@@ -163,7 +153,6 @@ const Home = () => {
             <img src="./assets/colors/8.jpg" alt="" />
           </Link>
         </div>
-        
       </div>
     </div>
   );

@@ -12,8 +12,8 @@ import { RxCross2 } from "react-icons/rx";
 import { BiDetail } from "react-icons/bi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BsImage, BsWhatsapp } from "react-icons/bs";
-import { addToCart } from "../../Redux/bag/action";
 import ReactWhatsapp from "react-whatsapp";
+import { addToCart } from "../../Redux/auth/action";
 const SingleProduct = () => {
   const [img, setImg] = useState([]);
   const [imgLink, setImgLink] = useState([]);
