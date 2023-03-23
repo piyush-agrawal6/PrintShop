@@ -4,8 +4,9 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { googleRegister, registerUser } from "../../Redux/auth/action";
 import jwt_decode from "jwt-decode";
-import { message } from "antd";
+import { message, Space, Spin } from "antd";
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,35 +21,40 @@ const Signup = () => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     if (formData.name.trim() !== "" && formData.email.trim() !== "") {
       if (formData.name.trim().length < 4) {
+        setLoading(false);
         messageApi.open({
           type: "error",
           content: "Name must be at least 4 characters",
           duration: 3,
         });
       } else {
-        console.log(formData);
         dispatch(registerUser(formData)).then((res) => {
           if (res.message === "User already exists") {
+            setLoading(false);
             messageApi.open({
               type: "info",
               content: "User already exists , Please login.",
               duration: 3,
             });
           } else if (res.message === "error") {
+            setLoading(false);
             messageApi.open({
               type: "info",
               content: "Something went wrong, please try again",
               duration: 3,
             });
           } else {
+            setLoading(false);
             localStorage.setItem("registerEmail", formData.email);
             return navigate("/otp");
           }
         });
       }
     } else {
+      setLoading(false);
       messageApi.open({
         type: "error",
         content: "Please enter all required fields",
@@ -56,17 +62,10 @@ const Signup = () => {
       });
     }
   };
-  if (auth.data.isAuthenticated) {
-    messageApi.open({
-      type: "success",
-      content: "User registered successfully",
-      duration: 3,
-    });
-    // return <Navigate to="/" />;
-  }
 
   function handleCallbackResponse(res) {
     let value = jwt_decode(res.credential);
+    setLoading(true);
     if (value.email_verified) {
       dispatch(
         googleRegister({
@@ -76,6 +75,7 @@ const Signup = () => {
         })
       ).then((res) => {
         if (res.message === "error") {
+          setLoading(false);
           return messageApi.open({
             type: "info",
             content: "Something went wrong, please try again",
@@ -87,9 +87,11 @@ const Signup = () => {
           content: "Login Successfully",
           duration: 3,
         });
+        setLoading(false);
         return navigate("/");
       });
     } else {
+      setLoading(false);
       messageApi.open({
         type: "info",
         content: "Incorrect Email Address",
@@ -116,6 +118,9 @@ const Signup = () => {
     window.google.accounts.id.prompt();
   }, []);
 
+  if (auth.data.isAuthenticated) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className="signup">
       <div className="signupContainer">
@@ -151,6 +156,23 @@ const Signup = () => {
               </button>
             </form>
             <div id="SigninDiv" className="googlesignup"></div>
+            {loading ? (
+              <Space
+                style={{
+                  width: "100vw",
+                  height: "100vh",
+                  position: "absolute",
+                  backgroundColor: "rgba(0,0,0,0.2)",
+                  top: "0",
+                  left: "0",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItem: "center",
+                }}
+              >
+                <Spin size="large"></Spin>
+              </Space>
+            ) : null}
           </div>
         </div>
       </div>

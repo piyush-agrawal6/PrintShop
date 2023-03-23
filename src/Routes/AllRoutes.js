@@ -4,6 +4,7 @@ import Footer from "../Components/footer/Footer";
 import Navbar from "../Components/navbar/Navbar";
 import Admin from "../Pages/admin/Admin";
 import Bag from "../Pages/bag/Bag";
+import Checkout from "../Pages/checkout/Checkout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/login/Login";
 import Otp from "../Pages/login/Otp";
@@ -20,6 +21,7 @@ const AllRoutes = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/otp" element={<Otp />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="/profile" element={<Profile />}></Route>

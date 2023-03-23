@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Otp.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { message } from "antd";
-import { authLogin, checkOTP } from "../../Redux/auth/action";
+import { message, Space, Spin } from "antd";
+import { checkOTP } from "../../Redux/auth/action";
 const Otp = () => {
   const registerEmail = localStorage.getItem("registerEmail");
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     OTP: "",
     email: registerEmail,
@@ -13,34 +14,39 @@ const Otp = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth);
-
-  const navigate = useNavigate();
   console.log(auth);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
     dispatch(checkOTP(formData)).then((response) => {
       if (response.message === "Incorrect OTP") {
+        setLoading(false);
         messageApi.open({
           type: "error",
           content: "Incorrect OTP",
           duration: 3,
         });
       } else if (response.message === "error") {
+        setLoading(false);
         messageApi.open({
           type: "info",
           content: "Something went wrong, please try again",
           duration: 3,
         });
       } else {
+        setLoading(false);
         return navigate("/");
       }
     });
   };
+
+  if (auth.data.isAuthenticated) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className="login">
       <div className="loginContainer">
@@ -71,6 +77,23 @@ const Otp = () => {
           </div>
         </div>
       </div>
+      {loading ? (
+        <Space
+          style={{
+            width: "100vw",
+            height: "100vh",
+            position: "absolute",
+            backgroundColor: "rgba(0,0,0,0.2)",
+            top: "0",
+            left: "0",
+            display: "flex",
+            justifyContent: "center",
+            alignItem: "center",
+          }}
+        >
+          <Spin size="large"></Spin>
+        </Space>
+      ) : null}
     </div>
   );
 };

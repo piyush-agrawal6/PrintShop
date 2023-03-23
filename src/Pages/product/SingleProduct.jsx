@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import { Slider } from "antd";
+import { Skeleton, Slider } from "antd";
 import "./singleproduct.css";
 import { RxCross2 } from "react-icons/rx";
 import { BiDetail } from "react-icons/bi";
@@ -70,13 +70,76 @@ const SingleProduct = () => {
   }, [id, dispatch]);
 
   if (loading) {
-    return "Loading...";
+    return (
+      <div className="proGrid">
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+        <div className="proSkeleton">
+          <Skeleton active />
+        </div>
+      </div>
+    );
   }
 
   return (
     <div className="singleProComponent">
       <div className="singleProNavigation">
-        Home / {product.gender} /{" "}
+        Home / Products /{" "}
         <span>
           {product.categories ? product.categories : product.category} /{" "}
           {product.brand}
