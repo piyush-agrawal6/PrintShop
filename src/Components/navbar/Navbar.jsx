@@ -8,7 +8,7 @@ import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { BsTruck } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
-import { Collapse, Drawer, Dropdown } from "antd";
+import { Collapse, Drawer, Dropdown, message } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.png";
 import { Grid, Tag } from "antd";
@@ -40,6 +40,7 @@ const Navbar = () => {
   const auth = useSelector((store) => store.auth);
   const { cart } = useSelector((store) => store.auth);
   const [cartItems, setCartItems] = useState([...cart]);
+  const [messageApi, contextHolder] = message.useMessage();
   const increment = (i) => {
     setCartItems(
       cartItems.map((elem, index) => {
@@ -100,7 +101,17 @@ const Navbar = () => {
     },
     {
       label: auth.data.isAuthenticated ? (
-        <p onClick={() => dispatch(authLogout())} p="10px">
+        <p
+          onClick={() => {
+            dispatch(authLogout());
+            messageApi.open({
+              type: "info",
+              content: "Logged Out Successfully.",
+              duration: 3,
+            });
+          }}
+          p="10px"
+        >
           Logout
         </p>
       ) : (
@@ -127,6 +138,7 @@ const Navbar = () => {
 
   return (
     <div className="container">
+      {contextHolder}
       <div className="row v-center">
         <div className="nav-item item-left">
           <div className="logo">
