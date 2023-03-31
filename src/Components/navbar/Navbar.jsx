@@ -39,11 +39,11 @@ const Navbar = () => {
   const navigate = useNavigate();
   const auth = useSelector((store) => store.auth);
   const { cart } = useSelector((store) => store.auth);
-  const [cartItems, setCartItems] = useState([...cart]);
+  const [cartItems, setCartItems] = useState(cart);
   const [messageApi, contextHolder] = message.useMessage();
   const increment = (i) => {
     setCartItems(
-      cartItems.map((elem, index) => {
+      cartItems?.map((elem, index) => {
         if (index === i) {
           elem.quantity += 1;
         }
@@ -53,7 +53,7 @@ const Navbar = () => {
   };
   const decrement = (i) => {
     setCartItems(
-      cartItems.map((elem, index) => {
+      cartItems?.map((elem, index) => {
         if (index === i && elem.quantity >= 1) {
           elem.quantity -= 1;
         }
@@ -65,7 +65,6 @@ const Navbar = () => {
   for (let i = 0; i < cartItems.length; i++) {
     totalPrice += cartItems[i].quantity * cartItems[i].product.off_price;
   }
-  console.log(totalPrice);
   const dispatch = useDispatch();
   const handleClick = (param = "", value = "") => {
     setClick(!click);

@@ -111,48 +111,34 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <p className="homeHeader">CATEGORIES WE OFFER</p>
-      <div className="homeColors">
+      <p className="homeHeader">MACHINERIES</p>
+      <div className="homeCategories">
         <div>
           <Link>
-            <img src="./assets/colors/1.jpg" alt="" />
+            <img src="./assets/colors/21.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/2.jpg" alt="" />
+            <img src="./assets/colors/17.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/3.jpg" alt="" />
+            <img src="./assets/colors/18.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/4.jpg" alt="" />
+            <img src="./assets/colors/19.jpg" alt="" />
           </Link>
         </div>
         <div>
           <Link>
-            <img src="./assets/colors/5.jpg" alt="" />
+            <img src="./assets/colors/20.jpg" alt="" />
           </Link>
         </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/6.jpg" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/7.jpg" alt="" />
-          </Link>
-        </div>
-        <div>
-          <Link>
-            <img src="./assets/colors/8.jpg" alt="" />
-          </Link>
-        </div>
+        
       </div>
     </div>
   );
