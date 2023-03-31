@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Product.css";
-import { Select } from "antd";
 import ProComp from "../../Components/product/ProComp";
 import { getProduct, sortProducts } from "../../Redux/product/action";
 import { useSelector, useDispatch } from "react-redux";
@@ -34,7 +33,7 @@ const Product = () => {
       setOrder("desc");
     }
   };
-
+  console.log(keyword, query, page, categories, subcategory);
   useEffect(() => {
     if (prevQuery !== query) {
       setPage(1);

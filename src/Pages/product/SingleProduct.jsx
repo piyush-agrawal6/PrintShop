@@ -51,9 +51,9 @@ const SingleProduct = () => {
     setLoading(true);
     const data = new FormData();
     data.append("file", files[0]);
-    data.append("upload_preset", "diverse");
+    data.append("upload_preset", "printshop");
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/diverse/image/upload",
+      "https://api.cloudinary.com/v1_1/printshop/image/upload",
       {
         method: "POST",
         body: data,

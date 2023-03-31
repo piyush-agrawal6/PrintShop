@@ -21,7 +21,6 @@ export const checkOTP = (form) => async (dispatch) => {
       `https://shy-lion-snaps.cyclic.app/user/register`,
       form
     );
-    console.log(data.data);
     if (data.data.message === "user registered successfully") {
       dispatch({
         type: types.REGISTER_USER_SUCCESS,
@@ -59,7 +58,6 @@ export const googleRegister = (form) => async (dispatch) => {
         },
       });
     }
-    console.log(data.data);
     return data.data;
   } catch (error) {
     console.log(error);
@@ -72,7 +70,6 @@ export const editUser = (userData, id) => async (dispatch) => {
       `https://shy-lion-snaps.cyclic.app/user/update?id=${id}`,
       userData
     );
-    console.log(data.data);
     dispatch({
       type: types.UPDATE_USER_SUCCESS,
       payload: {
@@ -137,7 +134,6 @@ export const addToCart = (cartData) => async (dispatch) => {
       type: types.ADD_TO_CART_SUCCESS,
       payload: cartData,
     });
-    console.log(data.data);
   } catch (error) {
     console.log(error);
   }

@@ -28,12 +28,12 @@ const Home = () => {
       <p className="homeHeader">TOP SELLERS</p>
       <div className="homeColors">
         <div>
-          <Link>
+          <Link to="/product?subcategory=visitingcard">
             <img src="./assets/colors/1.jpg" alt="" />
           </Link>
         </div>
         <div>
-          <Link>
+          <Link to="/product?subcategory=stamp">
             <img src="./assets/colors/2.jpg" alt="" />
           </Link>
         </div>
@@ -138,7 +138,6 @@ const Home = () => {
             <img src="./assets/colors/20.jpg" alt="" />
           </Link>
         </div>
-        
       </div>
     </div>
   );

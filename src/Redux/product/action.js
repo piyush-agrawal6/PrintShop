@@ -45,17 +45,19 @@ export const getProductDetails = (id) => async (dispatch) => {
 //sorting and filtering product
 export const sortProducts = (sort, order, shape) => async (dispatch) => {
   try {
-    let url = `https://shy-lion-snaps.cyclic.app/product`;
-    if (sort && shape) {
-      url = `https://shy-lion-snaps.cyclic.app/product?shape=${shape}&sort=${sort}&orderBy=${order}`;
-    } else if (sort || order) {
-      url = `https://shy-lion-snaps.cyclic.app/product?sort=${sort}&orderBy=${order}`;
-    } else if (shape) {
-      url = `https://shy-lion-snaps.cyclic.app/product?shape=${shape}`;
+    if (sort !== "" || order !== "" || shape !== "") {
+      let url = `https://shy-lion-snaps.cyclic.app/product`;
+      if (sort && shape) {
+        url = `https://shy-lion-snaps.cyclic.app/product?shape=${shape}&sort=${sort}&orderBy=${order}`;
+      } else if (sort || order) {
+        url = `https://shy-lion-snaps.cyclic.app/product?sort=${sort}&orderBy=${order}`;
+      } else if (shape) {
+        url = `https://shy-lion-snaps.cyclic.app/product?shape=${shape}`;
+      }
+      dispatch({ type: types.PRODUCT_DETAILS_REQUEST });
+      const data = await axios.get(url);
+      dispatch({ type: types.ALL_PRODUCT_SUCCESS, payload: data });
     }
-    dispatch({ type: types.PRODUCT_DETAILS_REQUEST });
-    const data = await axios.get(url);
-    dispatch({ type: types.ALL_PRODUCT_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
       type: types.PRODUCT_DETAILS_ERROR,
