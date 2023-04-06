@@ -8,7 +8,7 @@ import MetaData from "../../Components/MetaData";
 const Home = () => {
   return (
     <div>
-      <MetaData title={"Home Page"} />
+      <MetaData title={"Just Print Karo - Your Printing solution"} />
       <div className="HomeCarousel">
         <Carousel infiniteLoop autoPlay>
           <Link to="/product">

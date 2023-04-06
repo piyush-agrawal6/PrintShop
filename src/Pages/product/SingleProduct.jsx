@@ -14,6 +14,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BsImage, BsWhatsapp } from "react-icons/bs";
 import ReactWhatsapp from "react-whatsapp";
 import { addToCart } from "../../Redux/auth/action";
+import MetaData from "../../Components/MetaData";
 const SingleProduct = () => {
   const [img, setImg] = useState([]);
   const [imgLink, setImgLink] = useState([]);
@@ -138,6 +139,7 @@ const SingleProduct = () => {
 
   return (
     <div className="singleProComponent">
+      <MetaData title={product.title} />
       <div className="singleProNavigation">
         Home / Products /{" "}
         <span>

@@ -5,6 +5,7 @@ import { getProduct, sortProducts } from "../../Redux/product/action";
 import { useSelector, useDispatch } from "react-redux";
 import { Skeleton } from "antd";
 import { useLocation } from "react-router-dom";
+import MetaData from "../../Components/MetaData";
 const Product = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get("gender");
@@ -48,6 +49,7 @@ const Product = () => {
 
   return (
     <div className="productCon">
+      <MetaData title={"All customized products | JustPrintKaro"} />
       <div className="proContainer">
         <p className="proNavigation">
           <span>Home /</span> {query ? query : "Products"}

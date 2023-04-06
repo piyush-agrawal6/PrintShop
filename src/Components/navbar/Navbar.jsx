@@ -378,7 +378,9 @@ const Navbar = () => {
                         <Link to="product?subcategory=tshirt">T-shirts</Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=polotshirt">Polo T-shirts</Link>
+                        <Link to="product?subcategory=polotshirt">
+                          Polo T-shirts
+                        </Link>
                       </li>
                       <li>
                         <Link to="product?subcategory=shirt">Shirts</Link>
@@ -584,10 +586,7 @@ const Navbar = () => {
                   >
                     <p>Frames</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=lamp"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=lamp" className="categoryLink">
                     <p>Lamps</p>
                   </Link>
                   <Link
@@ -628,10 +627,7 @@ const Navbar = () => {
                   >
                     <p>Notebooks</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=stamp"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=stamp" className="categoryLink">
                     <p>Stamps</p>
                   </Link>
                   <Link
@@ -646,10 +642,7 @@ const Navbar = () => {
                   >
                     <p>Notepads</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=dairy"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=dairy" className="categoryLink">
                     <p>Dairy</p>
                   </Link>
                   <Link
@@ -669,16 +662,10 @@ const Navbar = () => {
                   >
                     <p>Graphics</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=logo"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=logo" className="categoryLink">
                     <p>Logos</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=label"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=label" className="categoryLink">
                     <p>Labels</p>
                   </Link>
                   <Link
@@ -699,16 +686,10 @@ const Navbar = () => {
                   >
                     <p>Mobile skins</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=tag"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=tag" className="categoryLink">
                     <p>Tags</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=tape"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=tape" className="categoryLink">
                     <p>Tapes</p>
                   </Link>
                 </Panel>
@@ -728,22 +709,13 @@ const Navbar = () => {
                   >
                     <p>Polo T-shirts</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=shirt"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=shirt" className="categoryLink">
                     <p>Shirts</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=bag"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=bag" className="categoryLink">
                     <p>Bags</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=cap"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=cap" className="categoryLink">
                     <p>Caps</p>
                   </Link>
                   <Link
@@ -758,26 +730,40 @@ const Navbar = () => {
                   >
                     <p>Sweatshirts</p>
                   </Link>
-                  <Link
-                    to="product?subcategory=apron"
-                    className="categoryLink"
-                  >
+                  <Link to="product?subcategory=apron" className="categoryLink">
                     <p>Aprons</p>
                   </Link>
                 </Panel>
               </Collapse>
-              <p className="mobItem" onClick={handleClick}>
+              {/* <p className="mobItem" onClick={handleClick}>
                 <Link to="/signup">Bulk Order</Link>
               </p>
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/signup">Blogs</Link>
-              </p>
+              </p> */}
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/profile">Profile</Link>
               </p>
-              <p className="mobItem" onClick={handleClick}>
-                <Link to="/signup">Login</Link>
-              </p>
+              {auth.data.isAuthenticated ? (
+                <p
+                  className="mobItem"
+                  onClick={() => {
+                    dispatch(authLogout());
+                    messageApi.open({
+                      type: "info",
+                      content: "Logged Out Successfully.",
+                      duration: 3,
+                    });
+                  }}
+                  p="10px"
+                >
+                  <Link>Logout</Link>
+                </p>
+              ) : (
+                <p className="mobItem" onClick={handleClick}>
+                  <Link to="/signup">Login</Link>
+                </p>
+              )}
             </ul>
           </nav>
         </div>
