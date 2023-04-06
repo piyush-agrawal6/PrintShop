@@ -143,8 +143,7 @@ const SingleProduct = () => {
       <div className="singleProNavigation">
         Home / Products /{" "}
         <span>
-          {product.categories ? product.categories : product.category} /{" "}
-          {product.brand}
+           {product.title}
         </span>
       </div>
       <div className="singlePro">

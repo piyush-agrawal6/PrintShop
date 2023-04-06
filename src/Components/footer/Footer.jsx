@@ -16,22 +16,30 @@ const Footer = () => {
             <h4>TOP SELLERS</h4>
             <ul>
               <li>
-                <Link to="/">Visiting Card/Brochure</Link>
+                <Link to="product?category=printing">
+                  Visiting Card/Brochure
+                </Link>
               </li>
               <li>
-                <Link>Graphics/logo Design</Link>
+                <Link to="product?category=graphic">Graphics/logo Design</Link>
               </li>
               <li>
-                <Link>Advertising & Publishing</Link>
+                <Link to="product?category=marketing">
+                  Advertising & Publishing
+                </Link>
               </li>
               <li>
-                <Link>Office Stationeries</Link>
+                <Link to="product?category=stationary">
+                  Office Stationeries
+                </Link>
               </li>
               <li>
-                <Link>Customized Gift Items</Link>
+                <Link to="product?category=gifts">Customized Gift Items</Link>
               </li>
               <li>
-                <Link>Fabric/Textile Printing</Link>
+                <Link to="product?category=fabric">
+                  Fabric/Textile Printing
+                </Link>
               </li>
             </ul>
           </div>
@@ -39,32 +47,35 @@ const Footer = () => {
             <h4>USEFUL LINKS</h4>
             <ul>
               <li>
-                <Link to="/profile">Home</Link>
+                <Link to="/">Home</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/profile">About Us</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/profile">Profile</Link>
               </li>
               <li>
+                <Link to="/product">Products</Link>
+              </li>
+              {/* <li>
                 <Link to="/bag">Cart</Link>
               </li>
               <li>
                 <Link to="/orders">Orders</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="footerList">
             <h4>LET US HELP</h4>
             <ul>
               <li>
-                <Link>
+                <a href="tel:8981167906">
                   <IoLogoWhatsapp className="footerIcon" /> +91-8981167906
-                </Link>
+                </a>
               </li>
               <li>
-                <a href="mailto: justprintkarodotcom@gmail.com">
+                <a target="blank" href="mailto: justprintkarodotcom@gmail.com">
                   <MdEmail className="footerIcon" />
                   Send Email
                 </a>
