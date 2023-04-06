@@ -342,6 +342,11 @@ li a {
   font-weight: 600;
   gap: 10px;
 }
+.dropdownCategory p {
+  padding: 5px;
+  color: black;
+  font-size: 16px;
+}
 
 @media (max-width: 1600px) {
   .megaMenu {
