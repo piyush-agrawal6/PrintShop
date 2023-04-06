@@ -11,16 +11,6 @@ const Home = () => {
       <MetaData title={"Just Print Karo - Your Printing solution"} />
       <div className="HomeCarousel">
         <Carousel infiniteLoop autoPlay>
-          <Link to="/product">
-            <div className="image">
-              <img src="./assets/slider/banner1.jpg" alt="images" />
-            </div>
-          </Link>
-          <Link to="/product?subcategory=banner">
-            <div className="image">
-              <img src="./assets/slider/slider6.jpeg" alt="images" />
-            </div>
-          </Link>
           <Link to="/product?category=gifts">
             <div className="image">
               <img src="./assets/slider/slider.jpg" alt="images" />
@@ -29,6 +19,16 @@ const Home = () => {
           <Link to="/product?subcategory=invitation">
             <div className="image">
               <img src="./assets/slider/slider7.gif" alt="images" />
+            </div>
+          </Link>
+          <Link to="/product">
+            <div className="image">
+              <img src="./assets/slider/banner1.jpg" alt="images" />
+            </div>
+          </Link>
+          <Link to="/product?subcategory=banner">
+            <div className="image">
+              <img src="./assets/slider/slider6.jpeg" alt="images" />
             </div>
           </Link>
         </Carousel>

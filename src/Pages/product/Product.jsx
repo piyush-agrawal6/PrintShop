@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Skeleton } from "antd";
 import { useLocation } from "react-router-dom";
 import MetaData from "../../Components/MetaData";
+import NoProducts from "../../Components/NoProducts/NoProducts";
 const Product = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get("gender");
@@ -73,7 +74,11 @@ const Product = () => {
               <option value="">Select Shape</option>
               <option value="rectangular">Rectangular</option>
               <option value="square">Square</option>
+              <option value="circular">Circular</option>
               <option value="a4">A4</option>
+              <option value="large">Large</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
             </select>
           </div>
         </div>
@@ -142,10 +147,13 @@ const Product = () => {
           </div>
         ) : (
           <div className="proGrid">
-            {data &&
-              data.products.map((pro, i) => {
+            {data && data.products?.length < 1 ? (
+              <NoProducts />
+            ) : (
+              data.products?.map((pro, i) => {
                 return <ProComp product={pro} key={i} />;
-              })}
+              })
+            )}
           </div>
         )}
       </div>

@@ -1,0 +1,13 @@
+.noProducts {
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+}
+.noProducts img {
+  width: 50%;
+}
+@media (max-width: 520px) {
+  .noProducts img {
+    width: 100%;
+  }
+}
