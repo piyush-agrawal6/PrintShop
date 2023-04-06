@@ -141,10 +141,7 @@ const SingleProduct = () => {
     <div className="singleProComponent">
       <MetaData title={product.title} />
       <div className="singleProNavigation">
-        Home / Products /{" "}
-        <span>
-           {product.title}
-        </span>
+        Home / Products / <span>{product.title}</span>
       </div>
       <div className="singlePro">
         <div className="singleProGallery">
@@ -211,16 +208,16 @@ const SingleProduct = () => {
             />
           </div>
           <div className="singleProButtons">
-            <button onClick={addCart} className="addToCart">
+            {/* <button onClick={addCart} className="addToCart">
               <HiOutlineShoppingBag className="singleProIcons" />
               {auth.data.isAuthenticated
                 ? "ADD TO CART"
                 : "LOGIN TO PLACE ORDER"}
-            </button>
+            </button> */}
             <ReactWhatsapp
               style={{ border: "none", padding: 0 }}
               number="8981167906"
-              message={`Hey can you give me some more information about this  product , Product ID : ${product._id}`}
+              message={`Hey can you give me some more information about this  product , Product ID : ${product._id} ,Product : ${product.title} Quantity : ${proQuantity}`}
             >
               <button className="addToList">
                 <BsWhatsapp className="singleProIcons" />
@@ -230,7 +227,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      <div className="singleProReviews">
+      {/* <div className="singleProReviews">
         <div className="postInput">
           <input
             style={{ display: "none" }}
@@ -261,7 +258,7 @@ const SingleProduct = () => {
               );
             })}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
