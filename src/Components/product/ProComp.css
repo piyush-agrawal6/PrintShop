@@ -12,11 +12,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
 }
 .itemImage img {
   width: 100%;
+  height: 320px;
+  object-fit: contain;
 }
 .itemBox a {
   text-decoration: none;
@@ -38,6 +41,7 @@
   font-size: 16px;
 }
 .itemDetails {
+  background-color: rgb(236, 236, 236);
   padding: 0.5rem 0.8rem;
   line-height: 24px;
 }
@@ -72,10 +76,17 @@
   color: #ff925a;
   font-weight: 400;
 }
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .itemDetails {
-    padding: 0.5rem 0.6rem 2rem 0.6rem;
+    padding: 0.5rem 0.6rem 1.5rem 0.6rem;
     line-height: 24px;
+  }
+  .itemBox {
+    border: 1px solid rgb(241, 241, 241);
+    box-shadow: none;
+  }
+  .itemBox:hover {
+    box-shadow: none;
   }
 }
 @media (max-width: 500px) {
