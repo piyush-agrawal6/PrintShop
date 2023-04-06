@@ -218,7 +218,7 @@ const SingleProduct = () => {
             </button>
             <ReactWhatsapp
               style={{ border: "none", padding: 0 }}
-              number="8144110261"
+              number="8981167906"
               message={`Hey can you give me some more information about this  product , Product ID : ${product._id}`}
             >
               <button className="addToList">
