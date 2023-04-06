@@ -11,7 +11,8 @@
   width: 90%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 5rem;
   gap: 2rem;
 }
 .homeNav {
@@ -57,6 +58,9 @@
   .homeColors {
     margin-bottom: 3rem;
   }
+  .homeCategories {
+    margin-bottom: 3rem;
+  }
 }
 @media (max-width: 1000px) {
   .homeHeader {
@@ -65,11 +69,12 @@
     font-size: 22px;
     letter-spacing: 1px;
   }
-  .homeColors {
-    margin-bottom: 3rem;
-  }
   .HomeCarousel {
     margin-bottom: -1rem;
+  }
+  .homeCategories {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 920px) {
@@ -87,9 +92,7 @@
   .HomeCarousel {
     margin-bottom: -1.5rem;
   }
-  .homeCategories {
-    grid-template-columns: repeat(5, 1fr);
-  }
+
   .homeColors {
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 2rem;
@@ -106,8 +109,8 @@
     letter-spacing: 0px;
   }
   .homeCategories {
-    grid-template-columns: repeat(4, 1fr);
-    margin-bottom: 1.6rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 1.5rem;
     gap: 1rem;
   }
   .homeColors {

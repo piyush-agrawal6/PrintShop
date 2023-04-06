@@ -1,6 +1,8 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "justprintkaro",
+  "homepage": "https://justprintkaro.com/",
+  "version": "1.0.0",
+  "description": "Website for selling printing products",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

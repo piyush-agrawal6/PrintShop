@@ -150,15 +150,15 @@ li a {
   opacity: 1;
 }
 .megaMenu {
-  left: 50%;
+  left: 45%;
   transform: translateX(-45%);
   overflow: auto;
 }
 .menuColumn {
-  max-width: 1700px;
-  max-height: 700px;
-  height: 400px;
-  width: 90%;
+  max-width: 100%;
+  max-height: 1000px;
+  height: 415px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }

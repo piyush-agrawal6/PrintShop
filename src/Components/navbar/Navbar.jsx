@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { BiSearch, BiUser } from "react-icons/bi";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+// import { HiOutlineShoppingBag } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { BsTruck } from "react-icons/bs";
+// import { BsTruck } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
 import { Collapse, Drawer, Dropdown, message } from "antd";
 import { authLogout } from "../../Redux/auth/action";
 import logo from "./logo.png";
-import { Grid, Tag } from "antd";
+import { Grid } from "antd";
 const { useBreakpoint } = Grid;
 const { Panel } = Collapse;
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const showDrawer = () => {
-    setOpen(true);
-  };
+  // const showDrawer = () => {
+  //   setOpen(true);
+  // };
 
   const onClose = () => {
     setOpen(false);
   };
   const [openOrder, setOpenOrder] = useState(false);
 
-  const showOrderDrawer = () => {
-    setOpenOrder(true);
-  };
+  // const showOrderDrawer = () => {
+  //   setOpenOrder(true);
+  // };
 
   const onOrderClose = () => {
     setOpenOrder(false);
@@ -61,10 +61,10 @@ const Navbar = () => {
       })
     );
   };
-  let totalPrice = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    totalPrice += cartItems[i].quantity * cartItems[i].product.off_price;
-  }
+  // let totalPrice = 0;
+  // for (let i = 0; i < cartItems.length; i++) {
+  //   totalPrice += cartItems[i].quantity * cartItems[i].product.off_price;
+  // }
   const dispatch = useDispatch();
   const handleClick = (param = "", value = "") => {
     setClick(!click);
@@ -88,7 +88,7 @@ const Navbar = () => {
       label: auth.data.isAuthenticated ? (
         <div>
           <h4>Welcome</h4>
-          <p>Access orders and many more !</p>
+          <p>Access orders and many more</p>
         </div>
       ) : (
         <div>
@@ -230,6 +230,11 @@ const Navbar = () => {
                       <li>
                         <Link to="product?subcategory=leaflet">Leaflets</Link>
                       </li>
+                      <li>
+                        <Link to="product?subcategory=hologram">
+                          3D Holograms
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                   <div className="menuList">
@@ -271,6 +276,30 @@ const Navbar = () => {
                         <Link to="product?subcategory=cover">
                           Mobile covers
                         </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="menuList">
+                    <ul>
+                      <Link to="product?category=homedecor">Home Decor</Link>
+                      <li>
+                        <Link to="product?subcategory=crystal">
+                          3D Crystals
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=photoframe">Frames</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=lamp">Lamps</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=signlight">
+                          LED Sign Lights
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=cushion">Cushions</Link>
                       </li>
                     </ul>
                   </div>
@@ -349,184 +378,391 @@ const Navbar = () => {
                         <Link to="product?subcategory=tshirt">T-shirts</Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=polo">Polo T-shirts</Link>
+                        <Link to="product?subcategory=polotshirt">Polo T-shirts</Link>
+                      </li>
+                      <li>
+                        <Link to="product?subcategory=shirt">Shirts</Link>
                       </li>
                       <li>
                         <Link to="product?subcategory=bag">Bags</Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=cap">Cap</Link>
+                        <Link to="product?subcategory=cap">Caps</Link>
                       </li>
                       <li>
                         <Link to="product?subcategory=jacket">Jackets</Link>
                       </li>
                       <li>
                         <Link to="product?subcategory=sweatshirt">
-                          Sweatshirt
+                          Sweatshirts
                         </Link>
                       </li>
                       <li>
-                        <Link to="product?subcategory=apron">Apron</Link>
+                        <Link to="product?subcategory=apron">Aprons</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
-              <li className="menuItem display">
+              {/* <li className="menuItem display">
                 <Link>Bulk Order</Link>
               </li>
               <li className="menuItem">
                 <Link>Blogs</Link>
-              </li>
+              </li> */}
               <p className="mobItem" onClick={handleClick}>
                 <Link to="/product">ALL PRODUCTS</Link>
               </p>
               <Collapse className="dropdownCategory">
-                <Panel header="Fabric Printing" key="1">
-                  <Link to="/product" className="categoryLink">
-                    <p>T-shirts</p>
+                <Panel header="Paper Printing" key="1">
+                  <Link to="product?category=printing" className="categoryLink">
+                    <p> All</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Polo T-shirts</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Bags</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Caps</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Jacket</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Sweatshirt</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Apron</p>
-                  </Link>
-                </Panel>
-                <Panel header="Office Stationeries" key="2">
-                  <Link to="/product" className="categoryLink">
-                    <p>Envelopes</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Calenders</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Notebooks</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Stamps</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Booklets</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Notepads</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Dairy</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Letter Pads</p>
-                  </Link>
-                </Panel>
-                <Panel header="Customized Gifts" key="3">
-                  <Link to="/product" className="categoryLink">
-                    <p>Photo Frames</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Mugs</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Pens</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Albums</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Canvas</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Gift Hampers</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Drink wares</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Mouse Pads</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Mobile covers</p>
-                  </Link>
-                </Panel>
-                <Panel header="Advertising & Publishing" key="4">
-                  <Link to="/product" className="categoryLink">
-                    <p>Banners</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Posters</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Signs</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Flyers</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Packaging boxes</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>IDs and Lanyards</p>
-                  </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Leaflets</p>
-                  </Link>
-                </Panel>
-                <Panel header="Paper Printing" key="5">
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=visitingcard"
+                    className="categoryLink"
+                  >
                     <p> Visiting cards</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=brochure"
+                    className="categoryLink"
+                  >
                     <p>Brochures</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=ratecard"
+                    className="categoryLink"
+                  >
                     <p>Rate cards</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=menucard"
+                    className="categoryLink"
+                  >
                     <p>Menu Cards</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=billbook"
+                    className="categoryLink"
+                  >
                     <p>Bill books</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
-                    <p>Invitation Cards</p>
+                  <Link
+                    to="product?subcategory=invitation"
+                    className="categoryLink"
+                  >
+                    <p>Invitations</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=bookmark"
+                    className="categoryLink"
+                  >
                     <p>Bookmarks</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=paperbag"
+                    className="categoryLink"
+                  >
                     <p>Paper Bags</p>
                   </Link>
                 </Panel>
+                <Panel header="Advertising & Publishing" key="2">
+                  <Link
+                    to="product?category=marketing"
+                    className="categoryLink"
+                  >
+                    <p> All</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=banner"
+                    className="categoryLink"
+                  >
+                    <p>Banners</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=poster"
+                    className="categoryLink"
+                  >
+                    <p>Posters</p>
+                  </Link>
+                  <Link to="product?subcategory=sign" className="categoryLink">
+                    <p>Signs</p>
+                  </Link>
+                  <Link to="product?subcategory=flyer" className="categoryLink">
+                    <p>Flyers</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=packaging"
+                    className="categoryLink"
+                  >
+                    <p>Packaging boxes</p>
+                  </Link>
+                  <Link to="product?subcategory=id" className="categoryLink">
+                    <p>IDs and Lanyards</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=leaflet"
+                    className="categoryLink"
+                  >
+                    <p>Leaflets</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=hologram"
+                    className="categoryLink"
+                  >
+                    <p>3D Holograms</p>
+                  </Link>
+                </Panel>
+                <Panel header="Customized Gifts" key="3">
+                  <Link to="product?category=gifts" className="categoryLink">
+                    <p> All</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=photoframe"
+                    className="categoryLink"
+                  >
+                    <p>Photo Frames</p>
+                  </Link>
+                  <Link to="product?subcategory=mug" className="categoryLink">
+                    <p>Mugs</p>
+                  </Link>
+                  <Link to="product?subcategory=pen" className="categoryLink">
+                    <p>Pens</p>
+                  </Link>
+                  <Link to="product?subcategory=album" className="categoryLink">
+                    <p>Albums</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=canvas"
+                    className="categoryLink"
+                  >
+                    <p>Canvas</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=gifthamper"
+                    className="categoryLink"
+                  >
+                    <p>Gift Hampers</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=drinkware"
+                    className="categoryLink"
+                  >
+                    <p>Drink wares</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=mousepad"
+                    className="categoryLink"
+                  >
+                    <p>Mouse Pads</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=mobilecover"
+                    className="categoryLink"
+                  >
+                    <p>Mobile covers</p>
+                  </Link>
+                </Panel>
+                <Panel header="Home Decor" key="4">
+                  <Link
+                    to="product?category=homedecor"
+                    className="categoryLink"
+                  >
+                    <p> All</p>
+                  </Link>
+
+                  <Link
+                    to="product?subcategory=crystal"
+                    className="categoryLink"
+                  >
+                    <p>3D Crystals</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=photoframe"
+                    className="categoryLink"
+                  >
+                    <p>Frames</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=lamp"
+                    className="categoryLink"
+                  >
+                    <p>Lamps</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=signlight"
+                    className="categoryLink"
+                  >
+                    <p>LED Sign Lights</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=cushion"
+                    className="categoryLink"
+                  >
+                    <p>Cushions</p>
+                  </Link>
+                </Panel>
+                <Panel header="Office Stationeries" key="5">
+                  <Link
+                    to="product?category=stationary"
+                    className="categoryLink"
+                  >
+                    <p> All</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=envelope"
+                    className="categoryLink"
+                  >
+                    <p>Envelopes</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=calender"
+                    className="categoryLink"
+                  >
+                    <p>Calenders</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=notebook"
+                    className="categoryLink"
+                  >
+                    <p>Notebooks</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=stamp"
+                    className="categoryLink"
+                  >
+                    <p>Stamps</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=booklet"
+                    className="categoryLink"
+                  >
+                    <p>Booklets</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=notepad"
+                    className="categoryLink"
+                  >
+                    <p>Notepads</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=dairy"
+                    className="categoryLink"
+                  >
+                    <p>Dairy</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=letterpad"
+                    className="categoryLink"
+                  >
+                    <p>Letter Pads</p>
+                  </Link>
+                </Panel>
                 <Panel header="Graphics & logos" key="6">
-                  <Link to="/product" className="categoryLink">
+                  <Link to="product?category=graphic" className="categoryLink">
+                    <p> All</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=graphic"
+                    className="categoryLink"
+                  >
+                    <p>Graphics</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=logo"
+                    className="categoryLink"
+                  >
+                    <p>Logos</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=label"
+                    className="categoryLink"
+                  >
                     <p>Labels</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=sticker"
+                    className="categoryLink"
+                  >
                     <p>Stickers</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=laptopskin"
+                    className="categoryLink"
+                  >
                     <p>Laptop skins</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=mobileskin"
+                    className="categoryLink"
+                  >
                     <p>Mobile skins</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=tag"
+                    className="categoryLink"
+                  >
                     <p>Tags</p>
                   </Link>
-                  <Link to="/product" className="categoryLink">
+                  <Link
+                    to="product?subcategory=tape"
+                    className="categoryLink"
+                  >
                     <p>Tapes</p>
+                  </Link>
+                </Panel>
+                <Panel header="Fabric Printing" key="7">
+                  <Link to="product?category=fabric" className="categoryLink">
+                    <p> All</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=tshirt"
+                    className="categoryLink"
+                  >
+                    <p>T-shirts</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=polotshirt"
+                    className="categoryLink"
+                  >
+                    <p>Polo T-shirts</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=shirt"
+                    className="categoryLink"
+                  >
+                    <p>Shirts</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=bag"
+                    className="categoryLink"
+                  >
+                    <p>Bags</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=cap"
+                    className="categoryLink"
+                  >
+                    <p>Caps</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=jacket"
+                    className="categoryLink"
+                  >
+                    <p>Jackets</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=sweatshirt"
+                    className="categoryLink"
+                  >
+                    <p>Sweatshirts</p>
+                  </Link>
+                  <Link
+                    to="product?subcategory=apron"
+                    className="categoryLink"
+                  >
+                    <p>Aprons</p>
                   </Link>
                 </Panel>
               </Collapse>
@@ -573,12 +809,12 @@ const Navbar = () => {
               </Link>
             </Dropdown>
           </div>
-          <div className="navIcons" onClick={showOrderDrawer}>
+          {/* <div className="navIcons" onClick={showOrderDrawer}>
             <Link>
               <BsTruck className="sideIcons" />
               <p className="display">Orders</p>
             </Link>
-          </div>
+          </div> */}
           <Drawer
             width={abcd.xs ? "350px" : abcd.sm ? "550px" : "550px"}
             title="ORDER - 3 Items"
@@ -623,13 +859,13 @@ const Navbar = () => {
               </div>
             )}
           </Drawer>
-          <div className="navIcons" onClick={showDrawer}>
+          {/* <div className="navIcons" onClick={showDrawer}>
             <Link>
               <HiOutlineShoppingBag className="sideIcons" />
               <span>1</span>
               <p className="display">Cart</p>
             </Link>
-          </div>
+          </div> */}
 
           <Drawer
             width={abcd.xs ? "320px" : abcd.sm ? "550px" : "550px"}
