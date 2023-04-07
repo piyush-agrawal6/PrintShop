@@ -35,7 +35,6 @@ const Product = () => {
       setOrder("desc");
     }
   };
-  console.log(keyword, query, page, categories, subcategory);
   useEffect(() => {
     if (prevQuery !== query) {
       setPage(1);
