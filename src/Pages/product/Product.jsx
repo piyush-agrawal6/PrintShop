@@ -149,7 +149,7 @@ const Product = () => {
             {data && data.products?.length < 1 ? (
               <NoProducts />
             ) : (
-              data.products?.map((pro, i) => {
+              data?.products?.map((pro, i) => {
                 return <ProComp product={pro} key={i} />;
               })
             )}
